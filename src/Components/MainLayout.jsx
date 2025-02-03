@@ -1,24 +1,28 @@
-import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./Sidebar";
-import ReadingPane from "./ReadingPane";
+import Home from "../Pages/HomePage";
+import Testpage from "../Pages/TestPage";
 import Navbar from "./Navbar";
 
-const MainLayout = () => {
+const Dashboard = () => {
   return (
     <div>
-      {/* Navbar */}
       <Navbar />
-      <div className="flex h-screen bg-gray-100">
-        {/* Sidebar */}
-        <Sidebar />
-        {/* Main Content */}
-        <div className="flex-1 flex flex-col overflow-hidden">
-          {/* Main Read Page */}
-          <ReadingPane />
+      <Router>
+        <div className="flex flex-col md:flex-row h-screen">
+          <Sidebar className="w-full md:w-1/4 lg:w-1/5" />
+
+          {/* Reading Pane */}
+          <div className="w-full md:w-3/4 lg:w-4/5 p-6 overflow-auto">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Test" element={<Testpage />} />
+            </Routes>
+          </div>
         </div>
-      </div>
+      </Router>
     </div>
   );
 };
 
-export default MainLayout;
+export default Dashboard;

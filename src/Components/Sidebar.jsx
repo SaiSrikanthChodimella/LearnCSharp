@@ -1,40 +1,32 @@
-import React from "react";
+import { Link } from "react-router-dom";
 
 const Sidebar = () => {
   return (
-    <aside className="w-64 bg-gradient-to-b from-blue-500 to-blue-700 shadow-lg rounded-lg">
-      <div className="p-6">
-        <h2 className="text-xl font-bold text-white">Topics</h2>
-        <nav className="mt-6">
-          <ul>
-            <li className="mb-4">
-              <a
-                href="#"
-                className="text-white hover:text-yellow-300 transition duration-300"
-              >
-                Dashboard
-              </a>
-            </li>
-            <li className="mb-4">
-              <a
-                href="#"
-                className="text-white hover:text-yellow-300 transition duration-300"
-              >
-                Settings
-              </a>
-            </li>
-            <li className="mb-4">
-              <a
-                href="#"
-                className="text-white hover:text-yellow-300 transition duration-300"
-              >
-                Profile
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </aside>
+    <div className="w-full md:w-1/4 bg-gray-800 text-white p-4">
+      <h2 className="text-xl font-bold mb-4">Dashboard</h2>
+      <ul>
+        <li className="p-2 cursor-pointer hover:bg-gray-700">
+          <Link to="/" className="block">
+            Home
+          </Link>
+        </li>
+        <li className="p-2 cursor-pointer hover:bg-gray-700">
+          <Link to="/Test" className="block">
+            Profile
+          </Link>
+        </li>
+        <li className="p-2 cursor-pointer hover:bg-gray-700">
+          <Link to="/settings" className="block">
+            Settings
+          </Link>
+        </li>
+        <li className="p-2 cursor-pointer hover:bg-gray-700">
+          <Link to="/about" className="block">
+            About
+          </Link>
+        </li>
+      </ul>
+    </div>
   );
 };
 
