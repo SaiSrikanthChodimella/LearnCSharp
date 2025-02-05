@@ -2,11 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Sidebar = () => {
-  const lessons = [
-    { name: "Home", href: "/" },
-    { name: "Basics", href: "/Basics" },
-    { name: "Settings", href: "/settings" },
-    { name: "About", href: "/about" },
+  const pages = [
+    { name: ".NET in a Nut Shell", href: "/DotNETInNutShell" },
+    { name: "All .NETs", href: "/TheDotNETs" },
+    { name: ".NET Evolution", href: "/EvolutionDotNet" },
+    { name: ".NET Components", href: "/DotNETComponents" },
+    { name: ".NET Memory", href: "/DotNETMemory" },
+    { name: ".NET Tools", href: "/DotNETTools" },
   ];
 
   return (
@@ -14,10 +16,10 @@ const Sidebar = () => {
       <div className="text-[0.9rem] space-y-6">
         <h2 className="text-xl font-bold mb-4">Learn C# and .NET</h2>
         <ul>
-          {lessons.map((lesson, index) => (
+          {pages.map((page, index) => (
             <li key={index} className="p-2 cursor-pointer hover:bg-gray-700">
-              <Link to={lesson.href} className="block">
-                {lesson.name}
+              <Link to={page.href} className="block">
+                {page.name}
               </Link>
             </li>
           ))}
