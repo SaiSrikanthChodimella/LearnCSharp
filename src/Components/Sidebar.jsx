@@ -9,6 +9,15 @@ const Sidebar = () => {
     { name: ".NET Components", href: "/DotNETComponents" },
     { name: ".NET Memory", href: "/DotNETMemory" },
     { name: ".NET Tools", href: "/DotNETTools" },
+
+    // C#Routes
+
+    { name: "C# & .NET", href: "/CSharpDotNet" },
+    { name: "C# Fundamentals", href: "/CSharpFundamentals" },
+    { name: "ConditionsAndFlows", href: "/ConditionsAndFlows" },
+    { name: "DataTypesAndVariable", href: "/DataTypesAndVariable" },
+    { name: "Operators", href: "/Operators" },
+    { name: "TypeCasting", href: "/TypeCasting" },
   ];
 
   return (
