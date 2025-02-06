@@ -50,7 +50,10 @@ const sectionsData = [
       "Previously, Microsoft relied on licensing revenue from products like SQL Server, Office, and .NET Framework.",
       "With the rise of cloud computing, licensing became less effective.",
       "Linux dominated cloud servers, prompting Microsoft to adapt by:",
-      <ul className="list-disc list-inside ml-4" key="why-open-source">
+      <ul
+        className="list-disc list-inside ml-4 space-y-2"
+        key="why-open-source"
+      >
         <li>Making .NET Core free and open-source.</li>
         <li>Releasing VS Code for free.</li>
         <li>Integrating Linux support in Windows (WSL, Docker, etc.).</li>
@@ -69,28 +72,37 @@ const sectionsData = [
   },
 ];
 
-const TheDotNET = () => (
+const EvolutionDotNet = () => (
   <div className="p-6 bg-gray-100 text-gray-800">
-    <h1 className="text-3xl font-bold mb-4">
-      Evolution of .NET and Microsoft's Open-Source Journey
-    </h1>
+    <div className="max-w-7xl mx-auto">
+      <h1 className="text-3xl font-bold mb-8">
+        Evolution of .NET and Microsoft's Open-Source Journey
+      </h1>
 
-    <div className="space-y-4">
-      {sectionsData.map((section, index) => (
-        <Section key={index} title={section.title}>
-          {section.items.map((item, idx) => (
-            <li key={idx}>{item}</li>
-          ))}
-        </Section>
-      ))}
+      <div className="space-y-6">
+        {sectionsData.map((section, index) => (
+          <Section key={index} title={section.title}>
+            <ul className="list-disc list-inside space-y-2">
+              {section.items.map((item, idx) => (
+                <li key={idx}>{item}</li>
+              ))}
+            </ul>
+          </Section>
+        ))}
+      </div>
+
+      <p className="mt-8 text-center">
+        <a
+          href="https://source.dot.net/"
+          className="text-blue-500 hover:underline"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          🔗 Explore the .NET source code here
+        </a>
+      </p>
     </div>
-
-    <p className="mt-4">
-      <a href="https://source.dot.net/" className="text-blue-500 underline">
-        🔗 Explore the .NET source code here
-      </a>
-    </p>
   </div>
 );
 
-export default TheDotNET;
+export default EvolutionDotNet;

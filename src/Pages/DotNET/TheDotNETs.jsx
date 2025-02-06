@@ -7,29 +7,31 @@ const Section = ({ title, children }) => (
   </div>
 );
 
-const DotNetContinued = () => {
+const TheDotNETs = () => {
   const sections = [
     {
       title: ".NET Framework",
       content: (
         <>
-          <li>
-            Used for building web applications (ASP.NET), Windows applications
-            (WinForms, WPF), Windows server apps, and Azure apps.
-          </li>
-          <li>
-            Includes the Base Class Library (BCL) and Common Language Runtime
-            (CLR).
-          </li>
-          <li>Provides built-in services such as:</li>
-          <ul className="list-disc list-inside ml-6 space-y-2">
-            <li>Memory management</li>
-            <li>Type and memory safety</li>
-            <li>Security</li>
-            <li>Networking</li>
-            <li>Application deployment</li>
-            <li>Data structures and APIs for low-level operations</li>
-            <li>Supports around 100 programming languages</li>
+          <ul className="list-disc list-inside space-y-2">
+            <li>
+              Used for building web applications (ASP.NET), Windows applications
+              (WinForms, WPF), Windows server apps, and Azure apps.
+            </li>
+            <li>
+              Includes the Base Class Library (BCL) and Common Language Runtime
+              (CLR).
+            </li>
+            <li>Provides built-in services such as:</li>
+            <ul className="list-disc list-inside ml-6 space-y-2">
+              <li>Memory management</li>
+              <li>Type and memory safety</li>
+              <li>Security</li>
+              <li>Networking</li>
+              <li>Application deployment</li>
+              <li>Data structures and APIs for low-level operations</li>
+              <li>Supports around 100 programming languages</li>
+            </ul>
           </ul>
         </>
       ),
@@ -38,12 +40,14 @@ const DotNetContinued = () => {
       title: ".NET Core",
       content: (
         <>
-          <li>
-            Includes all essential features of .NET Framework but removes
-            outdated and unnecessary components.
-          </li>
-          <li>Cross-platform and open-source</li>
-          <li>Officially supports C#, F#, and VB</li>
+          <ul className="list-disc list-inside space-y-2">
+            <li>
+              Includes all essential features of .NET Framework but removes
+              outdated and unnecessary components.
+            </li>
+            <li>Cross-platform and open-source</li>
+            <li>Officially supports C#, F#, and VB</li>
+          </ul>
         </>
       ),
     },
@@ -51,22 +55,26 @@ const DotNetContinued = () => {
       title: ".NET Standard",
       content: (
         <>
-          <li>
-            A set of rules that every .NET platform must follow to ensure
-            compatibility.
-          </li>
+          <ul className="list-disc list-inside space-y-2">
+            <li>
+              A set of rules that every .NET platform must follow to ensure
+              compatibility.
+            </li>
+          </ul>
           <h3 className="text-xl font-semibold mt-4 mb-2">
             Why was it needed?
           </h3>
-          <li>
-            Mono was used for cross-platform apps, while .NET Framework was for
-            Windows apps.
-          </li>
-          <li>These two were separate and could not be easily merged.</li>
-          <li>
-            .NET Standard defined common features to make shared libraries work
-            across different platforms.
-          </li>
+          <ul className="list-disc list-inside space-y-2">
+            <li>
+              Mono was used for cross-platform apps, while .NET Framework was
+              for Windows apps.
+            </li>
+            <li>These two were separate and could not be easily merged.</li>
+            <li>
+              .NET Standard defined common features to make shared libraries
+              work across different platforms.
+            </li>
+          </ul>
           <p className="mt-4">
             When writing libraries, target .NET Standard for maximum
             compatibility.
@@ -78,16 +86,18 @@ const DotNetContinued = () => {
       title: ".NET (Modern .NET – No More Core or Standard)",
       content: (
         <>
-          <li>
-            Everything is merged into one unified framework—.NET Core, .NET
-            Framework, Mono, and Xamarin are now just .NET.
-          </li>
-          <li>
-            .NET 5 was the first version of this unified approach (now out of
-            support).
-          </li>
-          <li>.NET 7 is the current standard support version.</li>
-          <li>.NET 8 is the latest Long-Term Support (LTS) version.</li>
+          <ul className="list-disc list-inside space-y-2">
+            <li>
+              Everything is merged into one unified framework—.NET Core, .NET
+              Framework, Mono, and Xamarin are now just .NET.
+            </li>
+            <li>
+              .NET 5 was the first version of this unified approach (now out of
+              support).
+            </li>
+            <li>.NET 7 is the current standard support version.</li>
+            <li>.NET 8 is the latest Long-Term Support (LTS) version.</li>
+          </ul>
           <h3 className="text-xl font-semibold mt-4 mb-2">
             Where does .NET 7+ run?
           </h3>
@@ -112,15 +122,18 @@ const DotNetContinued = () => {
 
   return (
     <div className="p-6 bg-gray-100 text-gray-800">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {sections.map((section, index) => (
-          <Section key={index} title={section.title}>
-            {section.content}
-          </Section>
-        ))}
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl font-bold mb-8">All the .NETs in a Glimpse</h1>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {sections.map((section, index) => (
+            <Section key={index} title={section.title}>
+              {section.content}
+            </Section>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default DotNetContinued;
+export default TheDotNETs;

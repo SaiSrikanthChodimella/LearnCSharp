@@ -10,12 +10,14 @@ const Section = ({ title, children }) => (
 const DotNETComponents = () => {
   return (
     <div className="p-6 bg-gray-100 text-gray-800">
-      <div className="w-full p-2">
-        <h1 className="text-2xl font-bold mb-4">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl font-bold mb-8">
           Understanding .NET Components
         </h1>
+
+        {/* Language Compiler Section */}
         <Section title="Language Compiler">
-          <ul className="list-disc list-inside">
+          <ul className="list-disc list-inside space-y-2">
             <li>
               Converts source code into MSIL (Microsoft Intermediate Language).
             </li>
@@ -26,20 +28,18 @@ const DotNETComponents = () => {
             <li>After compilation, the MSIL is processed by the CLR.</li>
           </ul>
         </Section>
-      </div>
 
-      <div className="flex flex-wrap">
-        <div className="w-full md:w-1/2 p-2">
-          <h1 className="text-2xl font-bold mb-4">CLR, CTS, CLS, and FCL</h1>
+        {/* CLR, CTS, CLS, and FCL Sections */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Section title="Common Language Runtime (CLR)">
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside space-y-2">
               <li>
                 The execution engine of .NET, also called VES (Virtual Execution
                 System).
               </li>
               <li>
-                Functions of CLR:
-                <ul className="list-disc list-inside ml-4">
+                <strong>Functions of CLR:</strong>
+                <ul className="list-disc list-inside ml-4 space-y-2">
                   <li>Memory Management (Garbage Collection).</li>
                   <li>Converts MSIL to native machine code.</li>
                   <li>Ensures type safety.</li>
@@ -50,8 +50,8 @@ const DotNETComponents = () => {
                 </ul>
               </li>
               <li>
-                Key Components of CLR:
-                <ul className="list-disc list-inside ml-4">
+                <strong>Key Components of CLR:</strong>
+                <ul className="list-disc list-inside ml-4 space-y-2">
                   <li>
                     JIT (Just-in-Time Compiler) → Converts MSIL to native code
                     (2nd phase of compilation).
@@ -68,23 +68,19 @@ const DotNETComponents = () => {
               </li>
             </ul>
           </Section>
-        </div>
 
-        <div className="w-full md:w-1/2 p-2">
           <Section title="Common Type System (CTS)">
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside space-y-2">
               <li>Ensures consistent data types across .NET languages.</li>
               <li>
-                Example: int in C# and Integer in VB.NET are both treated as
-                Int32 in IL/CLR.
+                Example: <code>int</code> in C# and <code>Integer</code> in
+                VB.NET are both treated as <code>Int32</code> in IL/CLR.
               </li>
             </ul>
           </Section>
-        </div>
 
-        <div className="w-full md:w-1/2 p-2">
           <Section title="Common Language Specification (CLS)">
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside space-y-2">
               <li>
                 A set of rules that .NET languages must follow to work together.
               </li>
@@ -94,15 +90,13 @@ const DotNETComponents = () => {
               </li>
             </ul>
           </Section>
-        </div>
 
-        <div className="w-full md:w-1/2 p-2">
           <Section title="Framework Class Library (FCL)">
-            <ul className="list-disc list-inside">
+            <ul className="list-disc list-inside space-y-2">
               <li>A collection of predefined classes and methods.</li>
               <li>
                 Example:
-                <ul className="list-disc list-inside ml-4">
+                <ul className="list-disc list-inside ml-4 space-y-2">
                   <li>
                     Namespaces like <code>using System;</code> allow access to
                     built-in functionality.
@@ -115,18 +109,17 @@ const DotNETComponents = () => {
             </ul>
           </Section>
         </div>
-      </div>
 
-      <div className="w-full p-2">
+        {/* .NET Execution Flow Section */}
         <Section title=".NET Execution Flow">
-          <ul className="list-disc list-inside">
+          <ul className="list-disc list-inside space-y-2">
             <li>CTS, CLS, and FCL are used to write the source code.</li>
             <li>Compiler converts source code to MSIL.</li>
             <li>
               CLR picks up the MSIL and executes it with its built-in features.
             </li>
           </ul>
-          <p>
+          <p className="mt-4">
             This structure ensures that .NET applications are efficient, secure,
             and cross-platform.
           </p>
