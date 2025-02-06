@@ -12,83 +12,80 @@ const FAQ2 = () => {
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
       <FAQItem title="Closures">
         <ul className="list-disc pl-5">
-          <li>Occurs when we are writing higher order functions</li>
+          <li>Occurs when writing higher-order functions</li>
           <li>
-            Functions that return another function are called higher order
+            Functions that return another function are called higher-order
             functions
           </li>
           <li>
-            While returning a function that function might have a variable (that
-            is short lived because it is on stack), so during run time we run
-            into an exception, cause that variable is destroyed as its out of
-            its scope
+            When returning a function, it might have a variable that is
+            short-lived because it is on the stack. During runtime, this can
+            cause an exception because the variable is destroyed as it is out of
+            scope.
           </li>
           <li>
-            So, to tackle this C# binds the lifetime of the variable to the
-            function by capturing the variable (so the variable is promoted from
-            stack to heap) – in background it’s like creating a class that has a
-            field with stack variable and a method which returns the function,
-            hence promoted to heap.
+            To handle this, C# binds the lifetime of the variable to the
+            function by capturing the variable (promoting it from stack to
+            heap). In the background, it's like creating a class with a field
+            for the stack variable and a method that returns the function, hence
+            promoting it to the heap.
           </li>
         </ul>
       </FAQItem>
 
-      <FAQItem title="C# version History">
-        <p>(All new stuff that have been getting added in each iteration)</p>
+      <FAQItem title="C# Version History">
+        <p>(New features added in each iteration)</p>
         <h3 className="text-lg font-semibold mt-2">
           Top Level Statements in C# 9 and above
         </h3>
         <ul className="list-disc pl-5">
-          <li>Writing Program without Main Statements</li>
+          <li>Writing programs without Main statements</li>
         </ul>
       </FAQItem>
 
       <FAQItem title="What is Dynamic">
-        <p>(To complicated and out of scope for now)</p>
+        <p>(Too complicated and out of scope for now)</p>
         <ul className="list-disc pl-5">
+          <li>Use Dynamic to change the data type at runtime</li>
           <li>
-            Use Dynamic to change the data type, at runtime you can do this
-          </li>
-          <li>
-            Is a bridge between Statically typed language (C#) and Dynamically
-            Typed Language (and only use this if you have to do this)
+            It acts as a bridge between statically typed languages (C#) and
+            dynamically typed languages (use only if necessary)
           </li>
           <li>EdgeJs Library is one way to do it</li>
           <li>
-            COM (Component Object Model) and OLE (Object linking and embedding)
-            (Reason that this exists)
+            COM (Component Object Model) and OLE (Object Linking and Embedding)
+            are reasons for its existence
           </li>
         </ul>
       </FAQItem>
 
-      <FAQItem title="Why do we Override ToString() Method">
+      <FAQItem title="Why Override ToString() Method">
         <ul className="list-disc pl-5">
           <li>
-            When we call ToString() Method we actually base class to string (ie
-            System.Object). This generates namespace.Class as output but in most
-            cases, we would like to get a meaningful string so, we override it
-            as per our requirement
+            Calling ToString() on a base class (System.Object) generates
+            namespace.Class as output. To get a meaningful string, we override
+            it as per our requirement.
           </li>
         </ul>
       </FAQItem>
 
-      <FAQItem title="Why do we Override Equals() Method">
+      <FAQItem title="Why Override Equals() Method">
         <ul className="list-disc pl-5">
-          <li>For value type it works as intended</li>
+          <li>For value types, it works as intended</li>
           <li>
-            For reference type (While checking equality we have 2 things
+            For reference types, while checking equality, we have two things:
             <ul className="list-disc pl-5">
-              <li>1) value equality</li>
+              <li>1) Value equality</li>
               <li>
-                2) reference equality i.e., object reference variables pointing
-                to same object(same references))
+                2) Reference equality (object reference variables pointing to
+                the same object)
               </li>
             </ul>
           </li>
-          <li>== is reference equality</li>
-          <li>.Equals() is value equality comparator</li>
+          <li>== checks reference equality</li>
+          <li>.Equals() checks value equality</li>
           <li>
-            Good Practice to override the Hashcode when overriding Equals()
+            Good practice to override the Hashcode when overriding Equals()
           </li>
         </ul>
       </FAQItem>
@@ -96,41 +93,38 @@ const FAQ2 = () => {
       <FAQItem title="Convert.ToString() vs .ToString()">
         <ul className="list-disc pl-5">
           <li>
-            ToString gives string representation and comes from system.Object
+            ToString gives string representation and comes from System.Object
             base class
           </li>
-          <li>Convert.ToString(), converts null to String.Empty</li>
-          <li>So .ToString throws an exception when object is null</li>
-          <li>
-            Both will return same value, and performance wise no difference
-          </li>
+          <li>Convert.ToString() converts null to String.Empty</li>
+          <li>.ToString throws an exception when the object is null</li>
+          <li>Both return the same value, with no performance difference</li>
         </ul>
       </FAQItem>
 
-      <FAQItem title="String Builder vs System.String">
+      <FAQItem title="StringBuilder vs System.String">
         <p>
-          String Builders are mutable and System.String are immutable, for
-          string manipulation it better to use string builder
+          StringBuilders are mutable, and System.Strings are immutable. For
+          string manipulation, it's better to use StringBuilder.
         </p>
         <ul className="list-disc pl-5">
           <li>
-            Immutable means unchangeable once created, and mutable is vice
-            versa.
+            Immutable means unchangeable once created, and mutable is the
+            opposite.
           </li>
         </ul>
         <p>
-          So, on System.String every time you make an operation like concat etc
-          a new object is created and the reference variable is pointing to that
-          new object and previous objects are still present in heap as orphaned
-          objects as they are not pointing to any reference variable (Memory
-          constraint).
+          With System.String, every time you perform an operation like
+          concatenation, a new object is created, and the reference variable
+          points to the new object. Previous objects remain in the heap as
+          orphaned objects, leading to memory constraints.
         </p>
         <p>
-          To use string builder, we create an object of string builder and use
-          that object (Example for concat we use .Append() method).
+          To use StringBuilder, create an object of StringBuilder and use that
+          object (e.g., for concatenation, use the .Append() method).
         </p>
-        <p>System.String is in System namespace</p>
-        <p>StringBuilder is in System.Text namespace</p>
+        <p>System.String is in the System namespace</p>
+        <p>StringBuilder is in the System.Text namespace</p>
       </FAQItem>
 
       <FAQItem title="Class vs Record vs Struct vs Record Struct">
@@ -158,7 +152,7 @@ const FAQ2 = () => {
             </tr>
             <tr>
               <td>Methods</td>
-              <td colSpan="3">All of them can implement Methods</td>
+              <td colSpan="3">All can implement methods</td>
             </tr>
             <tr>
               <td>Mutability</td>
@@ -173,11 +167,10 @@ const FAQ2 = () => {
             </tr>
             <tr>
               <td>Use Case</td>
-              <td>Complex Objects are better handled here</td>
-              <td>Small light weight objects residing on stack</td>
+              <td>Handles complex objects better</td>
+              <td>Small, lightweight objects on the stack</td>
               <td>
-                Ideal for data structures when they benefit from staying on
-                stack
+                Ideal for data structures that benefit from staying on the stack
               </td>
             </tr>
             <tr>
@@ -188,63 +181,63 @@ const FAQ2 = () => {
         </table>
       </FAQItem>
 
-      <FAQItem title="Squiggly Lines while coding">
+      <FAQItem title="Squiggly Lines while Coding">
         <ul className="list-disc pl-5">
-          <li>Red squiggly line is Error</li>
-          <li>Green squiggly is warning</li>
+          <li>Red squiggly line indicates an error</li>
+          <li>Green squiggly line indicates a warning</li>
         </ul>
       </FAQItem>
 
       <FAQItem title="Partial Classes">
         <p>
-          Use Partial modifier to make the class as partial (same properties can
-          be applied to structs, interfaces)
+          Use the partial modifier to make a class partial (the same applies to
+          structs and interfaces).
         </p>
         <p>What does that mean:</p>
         <ul className="list-disc pl-5">
           <li>
-            These two or more partial classes combine to form a normal class and
-            standard rules apply (if either is marked abstract or sealed entire
-            combined class has that modifier applied).
+            Two or more partial classes combine to form a normal class, and
+            standard rules apply (if either is marked abstract or sealed, the
+            entire combined class has that modifier applied).
           </li>
         </ul>
-        <p>Why use partial class:</p>
+        <p>Why use partial classes:</p>
         <ul className="list-disc pl-5">
           <li>
-            if we want to split a class (into multiple physical files)
-            functionality we can achieve this by partial class.
+            To split a class into multiple physical files for better
+            organization.
           </li>
         </ul>
         <p>
-          Syntax: partial ClassA and partial class A (in different file). (Both
-          should have same access specifier)
+          Syntax: partial ClassA and partial class A (in different files). Both
+          should have the same access specifier.
         </p>
         <p>
-          Example when we have lots of auto generated code mark that as partial
-          so that autogenerated code is in one physical file and our manual code
-          in separate code
+          Example: When we have lots of auto-generated code, mark it as partial
+          so that the auto-generated code is in one physical file and our manual
+          code is in a separate file.
         </p>
       </FAQItem>
 
       <FAQItem title="Partial Methods">
-        <p>Similar to that of partial class</p>
+        <p>Similar to partial classes</p>
         <ul className="list-disc pl-5">
           <li>
-            In one partial class we have definition and in another we have
-            implementation
+            In one partial class, we have the definition, and in another, we
+            have the implementation
           </li>
           <li>
-            So, if we do not have an implementation, the compiler removes all
-            the calls to that method.
+            If there is no implementation, the compiler removes all calls to
+            that method
           </li>
           <li>
-            Are private by default and cannot have virtual, abstract, override,
-            new, sealed and extern modifiers
+            They are private by default and cannot have virtual, abstract,
+            override, new, sealed, or extern modifiers
           </li>
-          <li>Return Type must be only be void</li>
+          <li>Return type must be void</li>
           <li>
-            If we implement both declaration and implementation at same time
-            then you get compilation error
+            If both declaration and implementation are provided at the same
+            time, a compilation error occurs
           </li>
         </ul>
       </FAQItem>

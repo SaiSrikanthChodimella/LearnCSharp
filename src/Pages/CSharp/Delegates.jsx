@@ -45,21 +45,21 @@ const Delegates = () => {
     <div className="p-4">
       <Section title="Delegates">
         <p>
-          A delegate is a type-safe pointer to a method that allows you to call
-          a method indirectly at runtime. You can think of it as a container for
+          A delegate is a type-safe pointer to a method. It allows you to call a
+          method indirectly at runtime. Think of it as a container for
           functions.
         </p>
-
-        <Section title="Key Points"></Section>
+      </Section>
+      <Section title="Key Points">
         <List
           items={[
-            "Used for callbacks (communication between two components).",
-            "A reference type that holds the address of a method.",
+            "Used for callbacks (communication between components).",
+            "A reference type that holds a method's address.",
             "Helps decouple code (avoids hardcoded logic).",
             "Lambda expressions are built on delegates.",
-            "Signature of the delegate must match the method it points to.",
+            "The delegate's signature must match the method it points to.",
             "Acts like a class—you create an instance of a delegate and pass it around.",
-            "Has similar Syntax as method but has as delegate keyword as modifier",
+            "Has a similar syntax to a method but uses the delegate keyword as a modifier.",
           ]}
         />
       </Section>
@@ -78,8 +78,8 @@ const Delegates = () => {
           ]}
         />
         <p>
-          Idea is to hook receivers to respective publisher, and publishers have
-          no information on subscribers
+          The idea is to hook receivers to the publisher, and publishers have no
+          information about subscribers.
         </p>
       </Section>
 
@@ -103,25 +103,22 @@ const Delegates = () => {
             "If the delegate has a return type, it returns the result of the last method in the list.",
           ]}
         />
-        <p>
-          The functions are invoked as per invocation List Order (that order is
-          defined by in which order you register them)
-        </p>
+        <p>The functions are invoked in the order they were registered.</p>
       </Section>
 
       <Section title="Func, Action, Predicate">
         <p>
-          Predefined delegates to avoid creating custom delegate types and can
+          Predefined delegates to avoid creating custom delegate types. They can
           have 0 to 16 parameters.
         </p>
         <List
           items={[
             "Action<T> (No Return Type) - Always returns void.",
             "Func<T, TResult> (Returns a Value) - The last type is the return type.",
-            "Predicate<T> (Returns bool) - Used when you need to check a condition and return true or false",
+            "Predicate<T> (Returns bool) - Used when you need to check a condition and return true or false.",
           ]}
         />
-        <p>LINQ is entirely based on Actions, Func and Predicates</p>
+        <p>LINQ is entirely based on Actions, Func, and Predicates.</p>
       </Section>
 
       <Section title="Summary of Delegates">
@@ -129,7 +126,7 @@ const Delegates = () => {
           headers={["Concept", "Description"]}
           rows={[
             ["Delegate", "Type-safe pointer to a method."],
-            ["Anonymous Methods", "Inline methods using delegate"],
+            ["Anonymous Methods", "Inline methods using delegate."],
             [
               "Multicast Delegate",
               "Delegate that calls multiple methods (+=, -=).",

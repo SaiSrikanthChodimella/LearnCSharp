@@ -12,76 +12,60 @@ const AsyncAwait = () => {
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
       <Section title="Sync Programming">
         <p>
-          Is working on single thread so every task is performed one after
-          another (so at a time only 1 task is executed), Example Blocked UI
+          Sync programming works on a single thread, executing tasks one after
+          another. This can lead to blocked UI.
         </p>
         <ul className="list-disc list-inside">
+          <li>The thread is locked for the duration of the task.</li>
           <li>
-            Here the thread is locked for quite some duration (based on task)
-          </li>
-          <li>
-            So, if new requests are added on top, new threads would be created
-            as CPU is still busy with the current thread, new threads consume
-            loads of memory
+            New threads are created for new requests, consuming a lot of memory.
           </li>
         </ul>
       </Section>
       <Section title="Async Programming">
         <p>
-          (To overcome problems in Sync Programming * on Non-CPU Bound
-          operations)
+          Async programming helps overcome the limitations of sync programming,
+          especially for non-CPU bound operations.
         </p>
         <ul className="list-disc list-inside">
           <li>
-            We use / reuse threads efficiently by the usage of (async and await
-            stuff)
+            Threads are used efficiently with async and await, reducing memory
+            and CPU load.
           </li>
           <li>
-            Threads are not locked as in Sync Programming (so after execution
-            the threads are moved back to the thread pool) and new threads are
-            not created, saves a lot of memory and CPU load.
+            Threads are not locked and are returned to the thread pool after
+            execution.
           </li>
-          <li>
-            Predefined Methods / Custom Async Methods end with Async suffix
-          </li>
-          <li>Tasks are foundations for Async programming</li>
-          <li>Task Based Pattern *</li>
-          <li>Event Based Pattern *</li>
+          <li>Async methods often have an "Async" suffix.</li>
+          <li>Tasks are the foundation of async programming.</li>
+          <li>There are Task-Based and Event-Based patterns.</li>
         </ul>
       </Section>
       <Section title="Async and Await">
         <ul className="list-disc list-inside">
-          <li>Using Async Keyword turns a method into Asynchronous method</li>
+          <li>The "async" keyword makes a method asynchronous.</li>
+          <li>The "await" keyword can only be used inside an async method.</li>
           <li>
-            Await keyword can be used only inside method with Async modifier
+            "Await" pauses the method until the task is complete, then returns
+            control to the caller.
           </li>
           <li>
-            Await suspends the calling method until the task is completed then,
-            returns the control to caller
+            "Async" wraps the return value in a task, and "await" unwraps it.
           </li>
+          <li>Async methods return either void or Task.</li>
+          <li>Use "async" to mark a method as asynchronous.</li>
           <li>
-            Async wraps the return into a task implicitly and await unwraps the
-            task implicitly
+            Use "await" on tasks to wait for their completion before moving
+            ahead.
           </li>
-          <li>Return Type of Async Method is either void or Task</li>
+          <li>When calling an async method, use "await".</li>
+          <li>This approach prevents thread blocking.</li>
           <li>
-            Use Async keyword on methods to mark the method as asynchronous
-            method
-          </li>
-          <li>
-            Use Await key word on the operation which is a task (when code
-            reached the point, we wait for the task to be finished, once
-            finished then we move ahead) – an async method cannot move past
-            await until task is done
-          </li>
-          <li>Also, when calling this method use await Keyword</li>
-          <li>Benefit of this is that, this way we do not block the thread.</li>
-          <li>
-            Also, while using Async the return is wrapped automatically around
-            task, to unwarp it use await
+            "Async" automatically wraps the return value in a task; use "await"
+            to unwrap it.
           </li>
         </ul>
-        <p>Works like magic with Entity Framework</p>
+        <p>Async and await work seamlessly with Entity Framework.</p>
       </Section>
     </div>
   );

@@ -19,20 +19,20 @@ const TypeCasting = () => {
     <div className="p-6 bg-gray-100">
       <Section title="Type Casting">
         <p>
-          Type casting means converting a value from one data type to another.
-          There are two types of type casting:
+          Type casting is the process of converting a value from one data type
+          to another. There are two types:
         </p>
         <SubSection title="1. Implicit Casting (Automatic Conversion)">
           <li>
             Happens automatically when converting a smaller data type to a
             larger one.
           </li>
-          <li>No data is lost.</li>
+          <li>There is no loss of data.</li>
           <li>
             <code>int i = 50;</code>
           </li>
           <li>
-            <code>long j = i; // Implicit casting from int to long</code>
+            <code>long j = i; // Automatically converts int to long</code>
           </li>
         </SubSection>
         <SubSection title="2. Explicit Casting (Manual Conversion)">
@@ -43,22 +43,22 @@ const TypeCasting = () => {
             <code>float f = 50.5f;</code>
           </li>
           <li>
-            <code>int i = (int)f; // Using cast operator (keyword)</code>
+            <code>int i = (int)f; // Using a cast operator</code>
           </li>
           <li>
-            <code>int j = Convert.ToInt32(f); // Using helper method</code>
+            <code>int j = Convert.ToInt32(f); // Using a helper method</code>
           </li>
         </SubSection>
       </Section>
 
       <Section title="Boxing and Unboxing">
         <p>
-          Boxing and unboxing deal with converting between value types and
+          Boxing and unboxing involve converting between value types and
           reference types.
         </p>
         <SubSection title="1. Boxing (Value Type → Reference Type)">
           <li>
-            Automatically converts a value type (like int) into an object.
+            Automatically converts a value type (e.g., int) into an object.
           </li>
           <li>
             <code>int i = 10;</code>

@@ -24,59 +24,57 @@ const Collections = () => {
       <h1 className="text-2xl font-bold mb-4">Collections</h1>
       <p className="mb-4">
         Collections in C# are data structures that hold multiple items. They
-        provide a way to store, retrieve, and manage data in a more organized
-        manner. In C#, collections are part of the System.Collections and
-        System.Collections.Generic namespaces.
+        help you store, retrieve, and manage data efficiently. Collections are
+        part of the System.Collections and System.Collections.Generic
+        namespaces.
       </p>
       <p className="mb-4">
-        There are several types of collections in C#, each with its own features
-        and use cases. (Ref Link)
+        There are different types of collections in C#, each with unique
+        features and use cases. (Ref Link)
       </p>
       <p className="mb-4">
-        Data Structures – is a named location that can be used to store data and
-        organise data to improve efficiency and memory management of code. All
-        the collections are ADT, that is they are all abstracted. So, we do not
-        know the background implementation of it. Unless we read the
-        documentation.
+        Data Structures are named locations used to store and organize data,
+        improving efficiency and memory management. All collections are abstract
+        data types (ADT), meaning their implementation details are hidden unless
+        you read the documentation.
       </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <Section title="Array">
           <p>
             An array is a collection of elements of the same type, stored in
-            contiguous memory locations. The key feature of an array is that it
-            has a fixed size once created.
+            contiguous memory locations. Arrays have a fixed size once created.
           </p>
           <List
             title="Advantages of Arrays:"
             items={[
-              "Fast access: You can quickly access elements using the index (e.g., array[0]).",
+              "Fast access: Quickly access elements using the index (e.g., array[0]).",
               "Efficient storage: Arrays are simple and use less memory.",
             ]}
           />
           <List
             title="Disadvantages of Arrays:"
             items={[
-              "Fixed size: Once created, the size of the array cannot be changed.",
+              "Fixed size: The size of the array cannot be changed once created.",
               "Difficult insertion/removal: Adding or removing elements requires creating a new array and copying the elements.",
             ]}
           />
         </Section>
 
         <Section title="Multi-Dimensional Array">
-          <p>Like a Grid, array of array or a rubix cube</p>
-          <p>Grid =2D and Rubix = 3D</p>
+          <p>Like a grid, array of arrays, or a Rubik's cube.</p>
+          <p>Grid = 2D and Rubik's = 3D</p>
           <p>
             Example of 2D:{" "}
             <code>
-              String [,] GridArray = [["honda", "GTR"], ["ford", "Mustang"],
-              ["Audi", "A4"]]{" "}
+              String [,] GridArray = [["Honda", "GTR"], ["Ford", "Mustang"],
+              ["Audi", "A4"]]
             </code>
           </p>
           <p>
-            Example for 3D:{" "}
+            Example of 3D:{" "}
             <code>
-              String [,,] RubixArray =
+              String [,,] RubikArray =
               [[["Red",1],["Red",2]],[["Blue",1],["Blue",2]],[["Green",1],["Green",2]]]
             </code>
           </p>
@@ -118,8 +116,8 @@ const Collections = () => {
         <Section title="Stacks">
           <p>
             A Stack is a collection that follows the Last-In, First-Out (LIFO)
-            principle. This means that the last element added to the stack will
-            be the first one to be removed.
+            principle. The last element added to the stack is the first one to
+            be removed.
           </p>
           <List
             title="Advantages of Stacks:"
@@ -146,8 +144,8 @@ const Collections = () => {
         <Section title="Queues">
           <p>
             A Queue is a collection that follows the First-In, First-Out (FIFO)
-            principle. This means that the first element added to the queue will
-            be the first one to be removed.
+            principle. The first element added to the queue is the first one to
+            be removed.
           </p>
           <List
             title="Advantages of Queues:"

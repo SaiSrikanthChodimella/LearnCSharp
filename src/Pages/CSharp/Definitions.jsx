@@ -11,125 +11,128 @@ const Definitions = () => {
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
       <DefinitionCard title="Namespace">
-        <p>Collection of Classes, interfaces, Structs, Enums and Delegates</p>
         <p>
-          Using Statements on top of the code page indicate you are using those
-          namespace’s classes etc
+          A collection of classes, interfaces, structs, enums, and delegates.
         </p>
-        <p>We can create nested Namespaces</p>
-        <p>We can Also Alias the Namespace when needed</p>
+        <p>
+          Using statements at the top of the code page indicate you are using
+          those namespace’s classes, etc.
+        </p>
+        <p>We can create nested namespaces.</p>
+        <p>We can also alias the namespace when needed.</p>
       </DefinitionCard>
 
       <DefinitionCard title="Class and Object">
         <p>
-          A bundle of Code (Methods, variables, fields, properties, constructor
-          etc) (Ref Link)
+          A bundle of code (methods, variables, fields, properties,
+          constructors, etc.).
         </p>
-        <p>User Defined Reference Data Type</p>
-        <p>Is a blueprint to objects</p>
-        <p>An instance of a class is called object</p>
+        <p>User-defined reference data type.</p>
+        <p>It is a blueprint for objects.</p>
+        <p>An instance of a class is called an object.</p>
         <p>
-          Class can be Static / Non-Static, if its Static then its methods
-          should be static
+          Classes can be static or non-static. If a class is static, its methods
+          should be static.
         </p>
         <p>
-          When you declare the modifier static to method or field then the field
-          will belong to the class rather than the instance of the class and
-          instances will not have command over the static modified fields and
-          methods.
+          When you declare a method or field as static, it belongs to the class
+          rather than an instance of the class. Instances cannot access static
+          fields and methods.
         </p>
       </DefinitionCard>
 
       <DefinitionCard title="Object Syntax">
-        <p>Datatype variableName = new Constructor ();</p>
+        <p>Datatype variableName = new Constructor();</p>
         <p>
-          Creates an instance of the class and we can access
-          variableName.something()
+          Creates an instance of the class, and we can access it using
+          variableName.something().
         </p>
         <p>Example:</p>
-        <p>Dog Dog1 = new Dog ();</p>
-        <p>Dog Dog2 = new Dog ();</p>
+        <p>Dog dog1 = new Dog();</p>
+        <p>Dog dog2 = new Dog();</p>
         <p>
-          We have 2 different instances of Dog, we can do something like
-          Dog1.Breed = x, Dog2.Breed = y;
+          We have two different instances of Dog. We can do something like
+          dog1.breed = x, dog2.breed = y.
         </p>
       </DefinitionCard>
 
       <DefinitionCard title="Constructor">
         <p>
-          A special method in Class that has same name as class and has no
-          return types, used to initialize data in the class.
+          A special method in a class that has the same name as the class and
+          has no return type. It is used to initialize data in the class.
         </p>
-        <p>Automatically called when the class is initiated.</p>
-        <p>Types of constructors (Default, Copy, parameterized, Static etc)?</p>
-        <p>Constructor Overloading is similar to that of Method overloading</p>
+        <p>Automatically called when the class is instantiated.</p>
+        <p>Types of constructors: default, copy, parameterized, static, etc.</p>
+        <p>Constructor overloading is similar to method overloading.</p>
         <p>Example:</p>
-        <p>Dog Dog1 = new Dog (x);</p>
-        <p>Dog Dog2 = new Dog (x, y);</p>
+        <p>Dog dog1 = new Dog(x);</p>
+        <p>Dog dog2 = new Dog(x, y);</p>
       </DefinitionCard>
 
       <DefinitionCard title="Method">
         <p>
-          Section of code to run a block of code whenever invoked / called. So
-          that repetitive code can be eliminated
+          A section of code that runs a block of code whenever invoked or
+          called, eliminating repetitive code.
         </p>
         <p>
-          Syntax: Access Specifier ReturnType MethodName (Parameters){" "}
-          {`{return variable of ReturnType};`}
+          Syntax: AccessSpecifier ReturnType MethodName(Parameters){" "}
+          {`{ return variableOfReturnType; }`}
         </p>
-        <p>If Return type is Void, then no return value</p>
-        <p>Parameter syntax = Datatype parameter name</p>
+        <p>If the return type is void, there is no return value.</p>
+        <p>Parameter syntax: Datatype parameterName</p>
         <p>
-          All parameters combined are called Signature of the method Example:
-          SomeMethod(int someInteger)
+          All parameters combined are called the signature of the method.
+          Example: someMethod(int someInteger)
         </p>
         <p>
-          Variables declared inside the method are member variables only
-          available in the scope of the method
+          Variables declared inside the method are local variables, only
+          available within the scope of the method.
         </p>
       </DefinitionCard>
 
       <DefinitionCard title="Optional Parameter">
-        <p>Should be the last parameter in the signature</p>
-        <p>Should have a default or custom value assigned to it</p>
-        <p>We can have only 1 optional parameter</p>
+        <p>Should be the last parameter in the signature.</p>
+        <p>Should have a default or custom value assigned to it.</p>
+        <p>We can have only one optional parameter.</p>
         <p>
-          So, if we do not pass value to that parameter then the assigned value
-          is considered
+          If we do not pass a value to that parameter, the assigned value is
+          used.
         </p>
         <p>Example:</p>
         <p>
-          Public void SomeMethod(int integer, double decimal, string =
-          “someString”) {`{ // Does Something }`}
+          public void someMethod(int integer, double decimal, string text =
+          "someString") {`{ // Does something }`}
         </p>
       </DefinitionCard>
 
       <DefinitionCard title="Params">
         <p>
-          Single Dimension Array of arguments / Parameters for a same method
+          A single-dimension array of arguments or parameters for the same
+          method.
         </p>
         <p>Syntax:</p>
-        <p>Public double TotalCost (params double [] price) {`{`}</p>
-        <p>Var Total = 0;</p>
-        <p>Foreach (var item in price) {`{`}</p>
-        <p>Total += price;</p>
+        <p>public double totalCost(params double[] prices) {`{`}</p>
+        <p>var total = 0;</p>
+        <p>foreach (var item in prices) {`{`}</p>
+        <p>total += item;</p>
         <p>{`}`}</p>
-        <p>Return total;</p>
+        <p>return total;</p>
         <p>{`}`}</p>
         <p>
-          i.e., while calling this method we can pass as many parameters of
-          similar data type to the method
+          When calling this method, we can pass as many parameters of the same
+          data type as needed.
         </p>
       </DefinitionCard>
 
       <DefinitionCard title="Recursive Method">
         <p>
-          Advantage: Easier debugging, Easier to Code, Alternative to iteration
+          Advantages: Easier debugging, easier to code, alternative to
+          iteration.
         </p>
-        <p>Disadvantages: Sometimes slow and memory consumption is high</p>
+        <p>Disadvantages: Sometimes slow and high memory consumption.</p>
         <p>
-          Method calling itself over and over we will have break or return
-          statement (to break cyclic loop)
+          A method that calls itself repeatedly. It must have a break or return
+          statement to stop the cyclic loop.
         </p>
       </DefinitionCard>
     </div>

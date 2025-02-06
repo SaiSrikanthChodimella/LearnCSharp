@@ -24,14 +24,14 @@ const CSharpNotes = () => (
   <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
     <Section title="IEnumerable">
       <p>
-        IEnumerable is an interface in C# that allows iteration over a
-        collection of items one at a time without storing all of them in memory.
+        IEnumerable is an interface in C# that lets you iterate over a
+        collection of items one at a time without storing them all in memory.
         This makes it efficient for handling large data sets.
       </p>
       <h3 className="text-lg font-semibold mt-4">How IEnumerable Works</h3>
-      <p>IEnumerable contains only one method:</p>
+      <p>IEnumerable has one method:</p>
       <List items={["GetEnumerator() → Returns an IEnumerator"]} />
-      <p>IEnumerator has three important methods:</p>
+      <p>IEnumerator has three key methods:</p>
       <List
         ordered
         items={[
@@ -40,11 +40,11 @@ const CSharpNotes = () => (
           "Reset() → Moves back to the start (not commonly used).",
         ]}
       />
-      <h3 className="text-lg font-semibold mt-4">Why we use IEnumerable</h3>
+      <h3 className="text-lg font-semibold mt-4">Why Use IEnumerable</h3>
       <List
         items={[
-          "Lazy Evaluation: Items are processed one at a time when needed, instead of loading everything into memory.",
-          "Better Performance: Suitable for large datasets, where storing all values at once is inefficient.",
+          "Lazy Evaluation: Processes items one at a time when needed, instead of loading everything into memory.",
+          "Better Performance: Ideal for large datasets, where storing all values at once is inefficient.",
           "Forward-Only Access: You can only move forward, not backward.",
         ]}
       />
@@ -60,10 +60,9 @@ const CSharpNotes = () => (
 
     <Section title="Enums">
       <p>
-        An enum (short for enumeration) is a special value type in C# that
-        allows us to define a set of named constants. We use enums when values
-        are fixed and do not change (e.g., days of the week, status codes,
-        directions, etc.)
+        An enum (short for enumeration) is a special value type in C# that lets
+        you define a set of named constants. Use enums when values are fixed and
+        do not change (e.g., days of the week, status codes, directions, etc.)
       </p>
       <h3 className="text-lg font-semibold mt-4">Example</h3>
       <pre className="bg-gray-100 p-4 rounded">
@@ -73,7 +72,7 @@ const CSharpNotes = () => (
         </code>
       </pre>
       <p>
-        To access we use <code>daysofweek.Monday</code> etc.
+        To access, use <code>daysofweek.Monday</code> etc.
       </p>
       <h3 className="text-lg font-semibold mt-4">Key Points:</h3>
       <List
@@ -90,10 +89,10 @@ const CSharpNotes = () => (
 
     <Section title="Generics">
       <p>
-        Generics allow you to write code that works with any data type, without
-        being tied to a specific one. You can define classes, methods, lists,
-        and fields that accept any data type as a parameter. The type is
-        specified when you call or instantiate the class or method.
+        Generics let you write code that works with any data type, without being
+        tied to a specific one. You can define classes, methods, lists, and
+        fields that accept any data type as a parameter. The type is specified
+        when you call or instantiate the class or method.
       </p>
       <h3 className="text-lg font-semibold mt-4">Why Use Generics?</h3>
       <List

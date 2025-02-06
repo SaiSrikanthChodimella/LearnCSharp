@@ -106,7 +106,8 @@ const DataTypesAndVariables = () => (
     <InfoBox>
       <Section title="Variables and Constants">
         <p className="mb-4">
-          Variables store data values and their values can change not the type
+          Variables store data values and their values can change, but not the
+          type.
         </p>
         <p className="mb-4">
           Constants (const): Their values remain the same throughout the
@@ -116,7 +117,7 @@ const DataTypesAndVariables = () => (
     </InfoBox>
 
     <InfoBox>
-      <Section title="Physical Memory is divided into 2 parts: Stack and Heap.">
+      <Section title="Memory: Stack and Heap">
         <p className="mb-2">
           Reference types are stored in the Heap and Value types are stored in
           the Stack. Reference variables (which hold the address of the actual
@@ -143,9 +144,9 @@ const DataTypesAndVariables = () => (
         <p className="text-gray-700 leading-relaxed mb-4">
           The var keyword lets you declare a variable without specifying its
           type. The compiler figures out the type based on the value you assign.
-          This makes things easy but it's only limited to local scope. I always
-          prefer using this whenever I can, but skip var when the right-hand
-          side of the equation is not clear.
+          This makes things easy but it's only limited to local scope. Use var
+          when the type is obvious or when working with complex types like LINQ
+          or anonymous objects.
         </p>
         <p className="text-gray-700 leading-relaxed mb-4">
           For example:
@@ -161,10 +162,6 @@ const DataTypesAndVariables = () => (
             var number = 10; <br />
             number = "Hello"; // Error! Can't change to a string
           </CodeBlock>
-        </p>
-        <p className="text-gray-700 leading-relaxed">
-          Use var when the type is obvious or when working with complex types
-          like LINQ or anonymous objects.
         </p>
       </Section>
     </InfoBox>

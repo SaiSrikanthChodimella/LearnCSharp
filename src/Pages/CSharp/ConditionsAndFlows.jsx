@@ -22,7 +22,7 @@ const codeExamples = {
     {
       title: "If-Else Statement",
       description:
-        "Use the if-else statement to execute code based on a condition. It's useful when you have two possible outcomes.",
+        "The if-else statement runs code based on a condition. Use it when you have two possible outcomes.",
       code: `int num = 10;
 if (num > 0)
 {
@@ -36,7 +36,7 @@ else
     {
       title: "Switch Statement",
       description:
-        "Use the switch statement to select one of many code blocks to be executed. It's useful for handling multiple conditions.",
+        "The switch statement chooses one of many code blocks to run. Use it for multiple conditions.",
       code: `int day = 3;
 switch (day)
 {
@@ -54,7 +54,7 @@ switch (day)
     {
       title: "Switch Expression",
       description:
-        "Use the switch expression for a more concise syntax when assigning values based on conditions.",
+        "The switch expression provides a concise way to assign values based on conditions.",
       code: `int day = 3;
 string result = day switch
 {
@@ -70,7 +70,7 @@ Console.WriteLine(result);`,
     {
       title: "For Loop",
       description:
-        "Use the for loop to execute a block of code a specific number of times. It's useful for iterating over a range.",
+        "The for loop runs a block of code a specific number of times. Use it to iterate over a range.",
       code: `int counter = 5;
 for (int i = 1; i <= counter; i++)
 {
@@ -80,7 +80,7 @@ for (int i = 1; i <= counter; i++)
     {
       title: "Foreach Loop",
       description:
-        "Use the foreach loop to iterate over a collection of items. It's useful for arrays and lists.",
+        "The foreach loop iterates over a collection of items. Use it for arrays and lists.",
       code: `string[] cars = {"Volvo", "BMW", "Ford", "Mazda"};
 foreach (string i in cars) 
 {
@@ -90,7 +90,7 @@ foreach (string i in cars)
     {
       title: "While Loop",
       description:
-        "Use the while loop to execute a block of code as long as a condition is true. It's useful for indefinite loops.",
+        "The while loop runs a block of code as long as a condition is true. Use it for indefinite loops.",
       code: `int i = 1;
 while (i <= 5)
 {
@@ -101,7 +101,7 @@ while (i <= 5)
     {
       title: "Do-While Loop",
       description:
-        "Use the do-while loop to execute a block of code at least once, and then repeat as long as a condition is true.",
+        "The do-while loop runs a block of code at least once, then repeats as long as a condition is true.",
       code: `int j = 1;
 do
 {

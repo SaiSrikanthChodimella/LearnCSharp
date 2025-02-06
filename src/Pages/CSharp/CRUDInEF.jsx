@@ -19,113 +19,77 @@ const CRUDInEF = () => {
             <Section title="Create">
               <ul className="list-disc list-inside">
                 <li>
-                  After the schema is created in DB, create new instances of
-                  model classes and populate them with relevant information.
+                  Create new instances of model classes and fill them with data.
                 </li>
                 <li>
-                  Create an instance of DerivedDbContext, use the relevant DBset
-                  Property, and save the changes using async methods like
-                  SaveChangesAsync.
+                  Use DerivedDbContext to save changes with SaveChangesAsync.
                 </li>
               </ul>
             </Section>
             <Section title="Update">
-              <p>
-                Modify the object values as intended and call SaveChangesAsync.
-              </p>
+              <p>Change object values and call SaveChangesAsync.</p>
             </Section>
             <Section title="Delete">
-              <p>
-                Use the Remove method and pass the object you want to remove.
-              </p>
+              <p>Use the Remove method to delete an object.</p>
             </Section>
             <Section title="Read">
-              <p>Use the Where clause to fetch data.</p>
+              <p>Use the Where clause to get data.</p>
             </Section>
             <Section title="Change Tracker in EF">
               <ul className="list-disc list-inside">
                 <li>
-                  Is on by default, can be disabled to improve performance.
-                </li>
-                <li>Tracks changes to objects it already knows.</li>
-                <li>
-                  Use dbContext.Entry(modelClassObject) to get entries of the
-                  change tracker, each entry has a state.
+                  Tracks changes to objects by default, can be disabled for
+                  better performance.
                 </li>
                 <li>
-                  Detached State: EF has no idea about the object / The object
-                  is not being tracked.
+                  Use dbContext.Entry(modelClassObject) to get change tracker
+                  entries.
                 </li>
-                <li>Added State: EF knows a new object is added.</li>
-                <li>Unchanged State: There are no changes.</li>
-                <li>
-                  Modified State: Some changes have been made, but not yet
-                  written to the database.
-                </li>
-                <li>Deleted State: Object has been removed.</li>
-                <li>
-                  We can read states and manually assign states based on
-                  requirements.
-                </li>
+                <li>States: Detached, Added, Unchanged, Modified, Deleted.</li>
+                <li>Manually assign states if needed.</li>
               </ul>
             </Section>
             <Section title="OriginalValue Property in Change Tracker">
               <ul className="list-disc list-inside">
                 <li>
-                  Use Entry.OriginalValue[nameof(modelClass.Property)] to know
+                  Use Entry.OriginalValue[nameof(modelClass.Property)] to get
                   the original value.
                 </li>
+                <li>Original value is the value saved to the DB.</li>
                 <li>
-                  The value saved to the DB is treated as the original value.
-                </li>
-                <li>
-                  Compares the current value of objects, identifies changes, and
-                  marks states in the change tracker.
+                  Compares current values to identify changes and update states.
                 </li>
                 <li>Change trackers are specific to each data context.</li>
               </ul>
             </Section>
             <Section title="Attaching Entities Update() in Change Tracker">
               <ul className="list-disc list-inside">
-                <li>
-                  Takes an object not part of the change tracker and adds it to
-                  the change tracker.
-                </li>
-                <li>Overwrites the entire object when using Update().</li>
+                <li>Adds an object to the change tracker.</li>
+                <li>Update() overwrites the entire object.</li>
               </ul>
             </Section>
             <Section title="Disabling Change Tracking">
               <p>
-                Use the .AsNoTracking() method to improve performance when it is
-                read-only.
+                Use .AsNoTracking() for read-only operations to improve
+                performance.
               </p>
             </Section>
             <Section title="Executing Raw SQL statements in EF">
               <ul className="list-disc list-inside">
+                <li>Use raw SQL when LINQ is not enough.</li>
+                <li>Be cautious of SQL injection.</li>
                 <li>
-                  When LINQ is not sufficient, use this method to write SQL
-                  statements.
+                  Use FromSqlRaw or FromSqlInterpolated for queries with
+                  parameters.
                 </li>
-                <li>Downside: it opens the gate for SQL injection.</li>
-                <li>
-                  Use FromSqlRaw(your SQL statement) or FromSqlInterpolated(your
-                  SQL statement) if you have parameters.
-                </li>
-                <li>
-                  Use ExecuteSqlRawAsync(your SQL statement) if you do not
-                  return any data.
-                </li>
+                <li>Use ExecuteSqlRawAsync for non-query SQL statements.</li>
               </ul>
             </Section>
             <Section title="Transactions in SQL">
               <p>
-                Transaction ensures either everything is committed or everything
-                is rolled back.
+                Transactions ensure all operations are committed or rolled back.
               </p>
-              <p>
-                Using var transaction = await
-                Context.Database.BeginTransactionAsync()
-              </p>
+              <p>Example:</p>
               <pre className="bg-gray-200 p-2 rounded">
                 <code>
                   {`try {
@@ -138,56 +102,31 @@ const CRUDInEF = () => {
               </pre>
             </Section>
             <Section title="Expression Trees">
-              <p>Complex topic but important to understand its applications.</p>
               <p>
-                C# code is translated by the compiler into IL, which is compiled
-                by JIT into assembly language and executed in memory.
+                Expression trees allow EF to translate C# code to SQL at
+                runtime.
               </p>
-              <p>
-                EF prevents the statement from being compiled to ML because it
-                makes more sense for our code to be translated to SQL rather
-                than ML.
-              </p>
-              <p>This is done at runtime using LINQ.Expression.</p>
-              <pre className="bg-gray-200 p-2 rounded">
-                <code>{`Func<Dish,bool> func = x => x.Title.StartsWith("B");`}</code>
-              </pre>
-              <p>With a concept called Expression Trees:</p>
+              <p>Example:</p>
               <pre className="bg-gray-200 p-2 rounded">
                 <code>{`Expression<Func<Dish, bool>> exfunc = x => x.Title.StartsWith("B");`}</code>
               </pre>
-              <p>
-                Generates an object tree, EF reads this at runtime and
-                translates it to SQL.
-              </p>
             </Section>
             <Section title="Relationships and Inheritance">
               <p>
-                By default, base and derived classes are put into a single
-                table, called table per hierarchy.
+                Base and derived classes are stored in a single table by
+                default.
               </p>
-              <p>
-                Discriminator is a special column of type text, containing the
-                name of the class the object is of. Other columns are null based
-                on the value in the discriminator.
-              </p>
-              <p>To force EF to store derived tables:</p>
+              <p>Use a discriminator column to identify the class type.</p>
+              <p>To store derived classes in separate tables:</p>
               <pre className="bg-gray-200 p-2 rounded">
                 <code>{`protected override void OnModelCreating(ModelBuilder modelBuilder) {
     modelBuilder.Entity<DerivedClass>().HasBaseType<ParentClass>();
 }`}</code>
               </pre>
-              <p>We can use this to set DataAnnotations for our properties.</p>
             </Section>
             <Section title="Include Method">
-              <p>
-                Enforces inner join in the simplest way (also takes column
-                names).
-              </p>
-              <p>
-                Use Entry().Collection().LoadAsync() to explicitly load the
-                instances.
-              </p>
+              <p>Use Include to enforce inner joins.</p>
+              <p>Use Entry().Collection().LoadAsync() to load related data.</p>
             </Section>
           </div>
         </div>

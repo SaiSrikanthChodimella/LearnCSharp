@@ -18,129 +18,106 @@ const DBClass = () => {
     <div className="p-6 bg-gray-100 min-h-screen">
       <div className="max-w-4xl mx-auto bg-white shadow-md rounded-lg p-6">
         <h1 className="text-2xl font-bold mb-4">
-          DbContext, DbContextOption and DbSet Class
+          DbContext, DbContextOptions, and DbSet Classes
         </h1>
 
         <Section title="DbContext">
           <ul className="list-disc list-inside">
-            <li>
-              Class that is responsible for interacting with underlying Database
-            </li>
-            <li>Manages the Database connections</li>
-            <li>Used for Saving and retrieval of data from database</li>
-            <li>We create a class and inherit DbContext class</li>
-            <li>DbContext exists in Microsoft.EntityFrameworkCore Namespace</li>
+            <li>Interacts with the database</li>
+            <li>Manages database connections</li>
+            <li>Saves and retrieves data</li>
+            <li>Inherit from DbContext class</li>
+            <li>Found in Microsoft.EntityFrameworkCore namespace</li>
           </ul>
         </Section>
 
         <Section title="DbContextOptions">
-          <p>
-            For DbContext to perform operations we need an instance of
-            DbContextOptions which carries information such as:
-          </p>
+          <p>DbContext needs DbContextOptions to operate, which includes:</p>
           <ul className="list-disc list-inside">
-            <li>Connection String</li>
-            <li>Database Provider etc.</li>
+            <li>Connection string</li>
+            <li>Database provider</li>
           </ul>
         </Section>
 
         <Section title="DbSet">
-          <p>Properties (are declared in DbContext Class):</p>
+          <p>Properties declared in DbContext class:</p>
           <ul className="list-disc list-inside">
             <li>
-              Create Properties for each available Entity type / Required Entity
-              Type and we write LINQ queries against this property and these
-              queries are translated to SQL Queries
+              Create properties for each entity type. LINQ queries against these
+              properties are translated to SQL.
             </li>
             <li>Implements IQueryable and IEnumerable</li>
           </ul>
         </Section>
 
-        <Section title="All Put Together">
-          <p>Should look something like this in the end:</p>
+        <Section title="Putting It All Together">
+          <p>Example:</p>
           <CodeBlock
-            code={`public class DerivedDbConextClass : DBContext {
-  public DerivedDBContextClass(DbcontextOptions<DerivedDbConextClass> abc) : base(abc) {}
+            code={`public class DerivedDbContextClass : DbContext {
+  public DerivedDbContextClass(DbContextOptions<DerivedDbContextClass> options) : base(options) {}
   public DbSet<ModelClass> ModelClass { get; set; }
 }`}
           />
         </Section>
 
-        <Section title="Handling model changes in EF">
-          <p>
-            We handle changes using Migrations. So, what is this Migration
-            anyway?
-          </p>
+        <Section title="Handling Model Changes in EF">
+          <p>Use migrations to handle model changes:</p>
           <ul className="list-disc list-inside">
             <li>
-              The auto generated code responsible for maintaining our database
-              schema (Tables, columns in tables, keys etc.). Taking the C Sharp
-              code and converting it into the SQL like queries in the
-              background.
+              Auto-generated code maintains the database schema. Converts C#
+              code to SQL queries.
             </li>
             <li>
-              Whenever we make modifications to our model, we need to add new
-              migration (creates a modified migration code) and then run
-              database update command (for the changes to be reflected)
+              Add a new migration and run the database update command to reflect
+              changes.
             </li>
           </ul>
         </Section>
 
-        <Section title="So how do we use the migrations">
+        <Section title="Using Migrations">
           <ul className="list-disc list-inside">
-            <li>
-              Once all your models are set up appropriately, through the
-              terminal we can run the below commands:
-            </li>
+            <li>Set up models and run these commands in the terminal:</li>
             <li>
               <code>dotnet ef migrations add &lt;MigrationName&gt;</code> -
-              Creates a new folder (named Migrations) in our Solution where we
-              can see a class with LINQ Style auto generated code which is
-              conversion of our Model to DB
+              Creates a new folder with migration code.
             </li>
             <li>
-              <code>dotnet ef migrations script</code> - Auto generated Script
-              of Schema creation in SQL, used for inspecting if the
-              inconsistencies or mistakes in query before we run the update
-              operations
+              <code>dotnet ef migrations script</code> - Generates a SQL script
+              for schema creation.
             </li>
             <li>
-              <code>dotnet ef database update</code> - Updates / Runs the
-              migration command in SQL domain (latest Migration is picked by
-              default)
+              <code>dotnet ef database update</code> - Applies the latest
+              migration.
             </li>
             <li>
-              <code>dotnet ef migrations remove</code> - Removes the migration
+              <code>dotnet ef migrations remove</code> - Removes the last
+              migration.
             </li>
           </ul>
         </Section>
 
         <Section>
           <p>
-            After a Db is generated and later model is changed and exception
-            will be thrown as Model and DB are not in sync anymore.
+            If the model changes after the database is generated, an exception
+            will be thrown due to mismatch.
           </p>
           <p>
-            To check if the model has changed or not, check{" "}
-            <code>_MigrationHistory</code> (auto generated table):
+            Check <code>_MigrationHistory</code> table for model changes:
           </p>
           <ul className="list-disc list-inside">
-            <li>
-              Contains GUID (Migration ID), ContextKey (Our context Class),
-              HashID of the Context Class and EF Version
-            </li>
+            <li>Contains Migration ID, ContextKey, HashID, and EF Version.</li>
           </ul>
         </Section>
 
         <Section>
           <p>
-            Global asax (Global Application Class) (this is how we do it in .NET
-            Framework, need check how we do this in .NET 7):
+            In .NET Framework, use Global.asax to check and recreate the
+            database on start. Check how to do this in .NET 7.
           </p>
           <ul className="list-disc list-inside">
             <li>
-              On Start check if there is a DB to our model and then choose to
-              Drop, recreate the DB
+              On start, check if the database matches the model and choose to
+              drop and recreate it if necessary.
             </li>
           </ul>
         </Section>

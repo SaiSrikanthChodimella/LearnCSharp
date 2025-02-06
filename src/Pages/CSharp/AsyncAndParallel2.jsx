@@ -52,25 +52,25 @@ const AsyncAndParallel2 = () => {
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
       <Section title="Retrieving Data from Thread">
         <p>
-          Delegates can be used to retrieve data from a thread by implementing a
-          callback function.
+          Use delegates to get data from a thread by implementing a callback
+          function.
         </p>
         <List
           items={[
-            "Define a delegate that matches the signature of the callback method.",
+            "Define a delegate that matches the callback method's signature.",
             "Pass the callback method to the thread.",
-            "The thread invokes the callback method to return data once it completes its task.",
+            "The thread calls the callback method to return data once it finishes its task.",
           ]}
         />
         <SubSection title="Thread.IsAlive">
-          <p>Checks if the thread is still running or has terminated</p>
+          <p>Checks if the thread is still running or has stopped.</p>
           <p>
-            Returns: true if the thread is alive; false if it has completed or
-            terminated.
+            Returns: true if the thread is running; false if it has finished or
+            stopped.
           </p>
         </SubSection>
         <SubSection title="Thread.Priority">
-          <p>Sets or gets the scheduling priority of the thread.</p>
+          <p>Sets or gets the thread's scheduling priority.</p>
           <List
             items={[
               "ThreadPriority.Low",
@@ -84,22 +84,22 @@ const AsyncAndParallel2 = () => {
         <SubSection title="Thread.Join">
           <p>
             Blocks the calling thread until the thread with the Join method
-            completes.
+            finishes.
           </p>
           <List
             items={[
-              "Without timeout: Waits indefinitely for the thread to complete.",
-              "With timeout: Waits for a specified time (in milliseconds) and returns true if the thread completes within the timeout; otherwise, false.",
+              "Without timeout: Waits indefinitely for the thread to finish.",
+              "With timeout: Waits for a specified time (in milliseconds) and returns true if the thread finishes within the timeout; otherwise, false.",
             ]}
           />
         </SubSection>
         <SubSection title="Key Points">
           <List
             items={[
-              "Use delegates to retrieve data from threads via callback functions.",
+              "Use delegates to get data from threads via callback functions.",
               "Use Thread.IsAlive to check if a thread is still running.",
-              "Adjust Thread.Priority to control the scheduling priority of threads.",
-              "Use Thread.Join to synchronize threads when their outputs are dependent on each other.",
+              "Adjust Thread.Priority to control the thread's scheduling priority.",
+              "Use Thread.Join to synchronize threads when their outputs depend on each other.",
             ]}
           />
         </SubSection>
@@ -108,8 +108,8 @@ const AsyncAndParallel2 = () => {
       <Section title="Protecting Shared Resources">
         <p>
           When multiple threads access shared resources, inconsistency can occur
-          if the resources are not protected. To ensure thread safety, use
-          synchronization mechanisms.
+          if the resources are not protected. Use synchronization mechanisms to
+          ensure thread safety.
         </p>
         <SubSection title="Synchronization Mechanisms">
           <SubSection title="Interlocked Class">
@@ -155,8 +155,8 @@ const AsyncAndParallel2 = () => {
               simultaneously.
             </p>
             <p>
-              When you need to control access to a resource for a limited number
-              of threads.
+              Use Case: When you need to control access to a resource for a
+              limited number of threads.
             </p>
           </SubSection>
         </SubSection>
@@ -164,7 +164,7 @@ const AsyncAndParallel2 = () => {
 
       <Section title="ManualResetEvent and AutoResetEvent">
         <SubSection title="ManualResetEvent">
-          <p>Acts like a gate that stays open once signalled.</p>
+          <p>Acts like a gate that stays open once signaled.</p>
           <List
             items={[
               "Set: Opens the gate, allowing all waiting threads to proceed.",

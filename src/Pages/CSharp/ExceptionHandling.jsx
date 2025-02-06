@@ -12,8 +12,8 @@ const ExceptionHandling = () => {
     <div className="p-6">
       <Section title="Exception Handling">
         <p>
-          Exception handling helps us deal with errors in a program without
-          crashing the application.
+          Exception handling allows us to manage errors in a program without
+          crashing it.
         </p>
       </Section>
 
@@ -24,32 +24,31 @@ const ExceptionHandling = () => {
           <li>finally block – Runs no matter what (used for cleanup).</li>
         </ol>
         <p>
-          We can have infinite types of distinct catch blocks and the finally
-          block always runs, whether there is an error or not.
+          We can have multiple catch blocks for different errors, and the
+          finally block always runs, whether there is an error or not.
         </p>
       </Section>
 
       <Section title="Why Use Exception Handling?">
         <p>Prevents the application from crashing.</p>
-        <p>Catches specific errors, like:</p>
+        <p>Catches specific errors, such as:</p>
         <ul className="list-disc list-inside">
           <li>DivideByZeroException (dividing by zero).</li>
           <li>FormatException (wrong data format).</li>
-          <li>NullReferenceException (trying to use a null object).</li>
+          <li>NullReferenceException (using a null object).</li>
         </ul>
       </Section>
 
       <Section title="Best Practices for Exception Handling">
         <ul className="list-disc list-inside">
-          <li>Use specific catch blocks to handle different errors.</li>
+          <li>Use specific catch blocks for different errors.</li>
           <li>Always inform the user about the error.</li>
           <li>
             Use the finally block for cleanup, like closing files or database
             connections.
           </li>
           <li>
-            Don't overuse try-catch – Instead, validate inputs to prevent
-            errors.
+            Don't overuse try-catch – Validate inputs to prevent errors instead.
           </li>
         </ul>
       </Section>

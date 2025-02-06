@@ -12,8 +12,8 @@ const OOPS = () => {
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
       <Section title="OOPs">
         <p>
-          OOP(Object oriented Programming) helps in organizing code using
-          real-world concepts like Inheritance, Abstraction, Polymorphism, and
+          Object-Oriented Programming (OOP) helps organize code using real-world
+          concepts like Inheritance, Abstraction, Polymorphism, and
           Encapsulation.
         </p>
       </Section>
@@ -58,8 +58,8 @@ const OOPS = () => {
 
       <Section title="Abstraction">
         <p>
-          Abstraction is used to define a blueprint for other classes. It helps
-          hide implementation details while exposing only essential features.
+          Abstraction defines a blueprint for other classes. It hides
+          implementation details while exposing only essential features.
         </p>
         <ul className="list-disc list-inside">
           <li>An abstract class is declared using the abstract keyword.</li>
@@ -84,9 +84,8 @@ const OOPS = () => {
       <Section title="Polymorphism">
         <p>
           Polymorphism allows a child class to provide a new version of a method
-          that was defined in the parent class. This is a key feature of
-          polymorphism, where the child class method overrides the parent class
-          method.
+          defined in the parent class. This is a key feature where the child
+          class method overrides the parent class method.
         </p>
         <ul className="list-disc list-inside">
           <li>
@@ -118,9 +117,9 @@ const OOPS = () => {
 
       <Section title="Encapsulation">
         <p>
-          Encapsulation is the concept of bundling related data and methods that
-          operate on that data into a single unit, typically a class. This helps
-          control how the data is accessed and modified.
+          Encapsulation bundles related data and methods that operate on that
+          data into a single unit, typically a class. This helps control how the
+          data is accessed and modified.
         </p>
         <ul className="list-disc list-inside">
           <li>
@@ -247,10 +246,10 @@ const OOPS = () => {
 
       <Section title="Properties">
         <p>
-          Properties are a way to provide controlled access to the fields of a
-          class. They are a blend of fields (for storing data) and methods (for
-          controlling access to data). Properties are part of encapsulation, as
-          they allow you to control how data is accessed and modified.
+          Properties provide controlled access to the fields of a class. They
+          are a blend of fields (for storing data) and methods (for controlling
+          access to data). Properties are part of encapsulation, as they allow
+          you to control how data is accessed and modified.
         </p>
         <ul className="list-disc list-inside">
           <li>

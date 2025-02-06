@@ -30,7 +30,7 @@ const CSharpFundamentals = () => {
             "Instantiation: Creating an object from a class.",
             "Initialization: Assigning a value to a declared variable.",
             "Declaration: Declaring a variable with a specific data type.",
-            "Realization / Implementation: Writing the logic to fulfill a specific requirement.",
+            "Implementation: Writing the logic to fulfill a specific requirement.",
             "Debugging: Running the debugger to step through each line of code.",
             "Statement: A single line of code or instruction.",
             "Runtime: The period when the application is running.",
@@ -106,7 +106,10 @@ class Program
       <Section title="Additional Concepts">
         <div className="mb-4">
           <h3 className="text-lg font-semibold">Comments</h3>
-          <p>Comments are ignorable lines in code usually for notes in code.</p>
+          <p>
+            Comments are lines in code that are ignored by the compiler, usually
+            used for notes.
+          </p>
           <List
             items={[
               <span>
