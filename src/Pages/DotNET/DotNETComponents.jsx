@@ -1,15 +1,15 @@
 import React from "react";
 
 const Section = ({ title, children }) => (
-  <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-    <h3 className="text-lg font-semibold mb-1">{title}</h3>
+  <div className="bg-white shadow-md rounded-lg p-6 mb-6 transition-all transform hover:scale-105 hover:shadow-xl">
+    <h3 className="text-lg font-semibold text-gray-800 mb-3">{title}</h3>
     {children}
   </div>
 );
 
 const DotNETComponents = () => {
   return (
-    <div className="p-4">
+    <div className="p-6 bg-gray-100 text-gray-800">
       <div className="w-full p-2">
         <h1 className="text-2xl font-bold mb-4">
           Understanding .NET Components

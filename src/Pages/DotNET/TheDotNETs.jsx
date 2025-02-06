@@ -1,9 +1,9 @@
 import React from "react";
 
 const Section = ({ title, children }) => (
-  <div className="p-6 bg-white shadow rounded-lg">
-    <h2 className="text-2xl font-bold mb-4">{title}</h2>
-    <ul className="list-disc list-inside space-y-2">{children}</ul>
+  <div className="bg-white shadow-md rounded-lg p-6 mb-6 transition-all transform hover:scale-105 hover:shadow-xl">
+    <h3 className="text-lg font-semibold text-gray-800 mb-3">{title}</h3>
+    {children}
   </div>
 );
 
@@ -111,7 +111,7 @@ const DotNetContinued = () => {
   ];
 
   return (
-    <div className="p-8 bg-gray-100">
+    <div className="p-6 bg-gray-100 text-gray-800">
       <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {sections.map((section, index) => (
           <Section key={index} title={section.title}>
