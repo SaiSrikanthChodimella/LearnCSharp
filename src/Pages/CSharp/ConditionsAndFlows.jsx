@@ -11,9 +11,9 @@ const CodeBlock = ({ title, description, code }) => (
 );
 
 const Section = ({ title, children }) => (
-  <div className="p-8">
-    <h1 className="text-2xl font-bold mb-6">{title}</h1>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">{children}</div>
+  <div className="bg-white shadow-md rounded-lg p-6 mb-6 transition-all transform hover:scale-105 hover:shadow-xl">
+    <h3 className="text-lg font-semibold text-gray-800 mb-3">{title}</h3>
+    {children}
   </div>
 );
 

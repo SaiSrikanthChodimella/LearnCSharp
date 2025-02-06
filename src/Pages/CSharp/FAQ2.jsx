@@ -1,7 +1,7 @@
 import React from "react";
 
-const FAQItem = ({ title, children }) => (
-  <div className="p-4 border rounded-lg shadow-md bg-white">
+const Section = ({ title, children }) => (
+  <div className="bg-white shadow-md rounded-lg p-4">
     <h2 className="text-xl font-bold mb-2">{title}</h2>
     {children}
   </div>
@@ -10,7 +10,7 @@ const FAQItem = ({ title, children }) => (
 const FAQ2 = () => {
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <FAQItem title="Closures">
+      <Section title="Closures">
         <ul className="list-disc pl-5">
           <li>Occurs when writing higher-order functions</li>
           <li>
@@ -31,9 +31,9 @@ const FAQ2 = () => {
             promoting it to the heap.
           </li>
         </ul>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="C# Version History">
+      <Section title="C# Version History">
         <p>(New features added in each iteration)</p>
         <h3 className="text-lg font-semibold mt-2">
           Top Level Statements in C# 9 and above
@@ -41,9 +41,9 @@ const FAQ2 = () => {
         <ul className="list-disc pl-5">
           <li>Writing programs without Main statements</li>
         </ul>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="What is Dynamic">
+      <Section title="What is Dynamic">
         <p>(Too complicated and out of scope for now)</p>
         <ul className="list-disc pl-5">
           <li>Use Dynamic to change the data type at runtime</li>
@@ -57,9 +57,9 @@ const FAQ2 = () => {
             are reasons for its existence
           </li>
         </ul>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="Why Override ToString() Method">
+      <Section title="Why Override ToString() Method">
         <ul className="list-disc pl-5">
           <li>
             Calling ToString() on a base class (System.Object) generates
@@ -67,9 +67,9 @@ const FAQ2 = () => {
             it as per our requirement.
           </li>
         </ul>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="Why Override Equals() Method">
+      <Section title="Why Override Equals() Method">
         <ul className="list-disc pl-5">
           <li>For value types, it works as intended</li>
           <li>
@@ -88,9 +88,9 @@ const FAQ2 = () => {
             Good practice to override the Hashcode when overriding Equals()
           </li>
         </ul>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="Convert.ToString() vs .ToString()">
+      <Section title="Convert.ToString() vs .ToString()">
         <ul className="list-disc pl-5">
           <li>
             ToString gives string representation and comes from System.Object
@@ -100,9 +100,9 @@ const FAQ2 = () => {
           <li>.ToString throws an exception when the object is null</li>
           <li>Both return the same value, with no performance difference</li>
         </ul>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="StringBuilder vs System.String">
+      <Section title="StringBuilder vs System.String">
         <p>
           StringBuilders are mutable, and System.Strings are immutable. For
           string manipulation, it's better to use StringBuilder.
@@ -125,9 +125,9 @@ const FAQ2 = () => {
         </p>
         <p>System.String is in the System namespace</p>
         <p>StringBuilder is in the System.Text namespace</p>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="Class vs Record vs Struct vs Record Struct">
+      <Section title="Class vs Record vs Struct vs Record Struct">
         <table className="table-auto w-full">
           <thead>
             <tr>
@@ -179,16 +179,16 @@ const FAQ2 = () => {
             </tr>
           </tbody>
         </table>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="Squiggly Lines while Coding">
+      <Section title="Squiggly Lines while Coding">
         <ul className="list-disc pl-5">
           <li>Red squiggly line indicates an error</li>
           <li>Green squiggly line indicates a warning</li>
         </ul>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="Partial Classes">
+      <Section title="Partial Classes">
         <p>
           Use the partial modifier to make a class partial (the same applies to
           structs and interfaces).
@@ -217,9 +217,9 @@ const FAQ2 = () => {
           so that the auto-generated code is in one physical file and our manual
           code is in a separate file.
         </p>
-      </FAQItem>
+      </Section>
 
-      <FAQItem title="Partial Methods">
+      <Section title="Partial Methods">
         <p>Similar to partial classes</p>
         <ul className="list-disc pl-5">
           <li>
@@ -240,7 +240,7 @@ const FAQ2 = () => {
             time, a compilation error occurs
           </li>
         </ul>
-      </FAQItem>
+      </Section>
     </div>
   );
 };

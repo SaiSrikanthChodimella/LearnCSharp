@@ -1,6 +1,6 @@
 import React from "react";
 
-const DefinitionCard = ({ title, children }) => (
+const Section = ({ title, children }) => (
   <div className="bg-white shadow-md rounded-lg p-4">
     <h2 className="text-xl font-bold mb-2">{title}</h2>
     {children}
@@ -10,7 +10,7 @@ const DefinitionCard = ({ title, children }) => (
 const Definitions = () => {
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <DefinitionCard title="Namespace">
+      <Section title="Namespace">
         <p>
           A collection of classes, interfaces, structs, enums, and delegates.
         </p>
@@ -20,9 +20,9 @@ const Definitions = () => {
         </p>
         <p>We can create nested namespaces.</p>
         <p>We can also alias the namespace when needed.</p>
-      </DefinitionCard>
+      </Section>
 
-      <DefinitionCard title="Class and Object">
+      <Section title="Class and Object">
         <p>
           A bundle of code (methods, variables, fields, properties,
           constructors, etc.).
@@ -39,9 +39,9 @@ const Definitions = () => {
           rather than an instance of the class. Instances cannot access static
           fields and methods.
         </p>
-      </DefinitionCard>
+      </Section>
 
-      <DefinitionCard title="Object Syntax">
+      <Section title="Object Syntax">
         <p>Datatype variableName = new Constructor();</p>
         <p>
           Creates an instance of the class, and we can access it using
@@ -54,9 +54,9 @@ const Definitions = () => {
           We have two different instances of Dog. We can do something like
           dog1.breed = x, dog2.breed = y.
         </p>
-      </DefinitionCard>
+      </Section>
 
-      <DefinitionCard title="Constructor">
+      <Section title="Constructor">
         <p>
           A special method in a class that has the same name as the class and
           has no return type. It is used to initialize data in the class.
@@ -67,9 +67,9 @@ const Definitions = () => {
         <p>Example:</p>
         <p>Dog dog1 = new Dog(x);</p>
         <p>Dog dog2 = new Dog(x, y);</p>
-      </DefinitionCard>
+      </Section>
 
-      <DefinitionCard title="Method">
+      <Section title="Method">
         <p>
           A section of code that runs a block of code whenever invoked or
           called, eliminating repetitive code.
@@ -88,9 +88,9 @@ const Definitions = () => {
           Variables declared inside the method are local variables, only
           available within the scope of the method.
         </p>
-      </DefinitionCard>
+      </Section>
 
-      <DefinitionCard title="Optional Parameter">
+      <Section title="Optional Parameter">
         <p>Should be the last parameter in the signature.</p>
         <p>Should have a default or custom value assigned to it.</p>
         <p>We can have only one optional parameter.</p>
@@ -103,9 +103,9 @@ const Definitions = () => {
           public void someMethod(int integer, double decimal, string text =
           "someString") {`{ // Does something }`}
         </p>
-      </DefinitionCard>
+      </Section>
 
-      <DefinitionCard title="Params">
+      <Section title="Params">
         <p>
           A single-dimension array of arguments or parameters for the same
           method.
@@ -122,9 +122,9 @@ const Definitions = () => {
           When calling this method, we can pass as many parameters of the same
           data type as needed.
         </p>
-      </DefinitionCard>
+      </Section>
 
-      <DefinitionCard title="Recursive Method">
+      <Section title="Recursive Method">
         <p>
           Advantages: Easier debugging, easier to code, alternative to
           iteration.
@@ -134,7 +134,7 @@ const Definitions = () => {
           A method that calls itself repeatedly. It must have a break or return
           statement to stop the cyclic loop.
         </p>
-      </DefinitionCard>
+      </Section>
     </div>
   );
 };

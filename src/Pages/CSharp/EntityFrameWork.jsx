@@ -9,7 +9,7 @@ const EntityFramework = () => {
     </ul>
   );
 
-  const renderSection = (title, content) => (
+  const Section = (title, content) => (
     <div className="bg-white shadow-md rounded-lg p-6 mb-4">
       <h2 className="text-2xl font-bold mb-4">{title}</h2>
       {content}
@@ -116,15 +116,12 @@ const EntityFramework = () => {
   return (
     <div className="p-6 bg-gray-100">
       <div className="max-w-4xl mx-auto">
-        {renderSection(
-          "Entity Framework (an ORM Framework)",
-          entityFrameworkContent
-        )}
-        {renderSection(
+        {Section("Entity Framework (an ORM Framework)", entityFrameworkContent)}
+        {Section(
           "Getting Started with Entity Framework",
           gettingStartedContent
         )}
-        {renderSection(
+        {Section(
           "Working with Entity Framework with Code First Approach",
           codeFirstApproachContent
         )}

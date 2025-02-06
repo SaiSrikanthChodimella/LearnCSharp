@@ -74,8 +74,8 @@ const Table = ({ data }) => (
 );
 
 const Section = ({ title, children }) => (
-  <div className="mb-6">
-    <h3 className="text-xl font-semibold mb-2">{title}</h3>
+  <div className="bg-white shadow-md rounded-lg p-6 mb-6 transition-all transform hover:scale-105 hover:shadow-xl">
+    <h3 className="text-lg font-semibold text-gray-800 mb-3">{title}</h3>
     {children}
   </div>
 );

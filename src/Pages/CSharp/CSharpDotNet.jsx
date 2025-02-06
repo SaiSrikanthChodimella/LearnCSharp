@@ -1,9 +1,9 @@
 import React from "react";
 
 const Section = ({ title, children }) => (
-  <div className="bg-gray-50 p-4 rounded-lg shadow">
-    <h2 className="font-semibold mb-2">{title}</h2>
-    <p className="text-gray-700">{children}</p>
+  <div className="bg-white shadow-md rounded-lg p-6 mb-6 transition-all transform hover:scale-105 hover:shadow-xl">
+    <h3 className="text-lg font-semibold text-gray-800 mb-3">{title}</h3>
+    {children}
   </div>
 );
 
