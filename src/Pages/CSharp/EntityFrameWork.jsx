@@ -114,18 +114,13 @@ const EntityFramework = () => {
   );
 
   return (
-    <div className="p-6 bg-gray-100">
-      <div className="max-w-4xl mx-auto">
-        {Section("Entity Framework (an ORM Framework)", entityFrameworkContent)}
-        {Section(
-          "Getting Started with Entity Framework",
-          gettingStartedContent
-        )}
-        {Section(
-          "Working with Entity Framework with Code First Approach",
-          codeFirstApproachContent
-        )}
-      </div>
+    <div className="p-6 bg-gray-100 min-h-screen">
+      {Section("Entity Framework (an ORM Framework)", entityFrameworkContent)}
+      {Section("Getting Started with Entity Framework", gettingStartedContent)}
+      {Section(
+        "Working with Entity Framework with Code First Approach",
+        codeFirstApproachContent
+      )}
     </div>
   );
 };

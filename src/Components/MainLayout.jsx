@@ -3,6 +3,7 @@ import Sidebar from "./Sidebar";
 import Home from "../Pages/Home";
 import DotNETRoutes from "./DotNETRoutes";
 import CSharpRoutes from "./CSharpRoutes";
+import Footer from "./Footer";
 
 const Dashboard = () => {
   return (
@@ -18,6 +19,7 @@ const Dashboard = () => {
           </Routes>
           <DotNETRoutes />
           <CSharpRoutes />
+          <Footer />
         </main>
       </div>
     </Router>

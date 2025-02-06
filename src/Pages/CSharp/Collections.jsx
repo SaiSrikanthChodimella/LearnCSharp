@@ -22,23 +22,24 @@ const Collections = () => {
   return (
     <div className="p-6 bg-gray-100 text-gray-800">
       <h1 className="text-2xl font-bold mb-4">Collections</h1>
-      <p className="mb-4">
-        Collections in C# are data structures that hold multiple items. They
-        help you store, retrieve, and manage data efficiently. Collections are
-        part of the System.Collections and System.Collections.Generic
-        namespaces.
-      </p>
-      <p className="mb-4">
-        There are different types of collections in C#, each with unique
-        features and use cases. (Ref Link)
-      </p>
-      <p className="mb-4">
-        Data Structures are named locations used to store and organize data,
-        improving efficiency and memory management. All collections are abstract
-        data types (ADT), meaning their implementation details are hidden unless
-        you read the documentation.
-      </p>
-
+      <Section>
+        <p className="mb-4">
+          Collections in C# are data structures that hold multiple items. They
+          help you store, retrieve, and manage data efficiently. Collections are
+          part of the System.Collections and System.Collections.Generic
+          namespaces.
+        </p>
+        <p className="mb-4">
+          There are different types of collections in C#, each with unique
+          features and use cases. (Ref Link)
+        </p>
+        <p className="mb-4">
+          Data Structures are named locations used to store and organize data,
+          improving efficiency and memory management. All collections are
+          abstract data types (ADT), meaning their implementation details are
+          hidden unless you read the documentation.
+        </p>
+      </Section>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
         <Section title="Array">
           <p>
