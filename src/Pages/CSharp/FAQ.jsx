@@ -1,8 +1,8 @@
 import React from "react";
 
 const Section = ({ title, children }) => (
-  <div className="bg-white shadow-md rounded-lg p-4">
-    <h2 className="text-xl font-bold mb-2">{title}</h2>
+  <div className="bg-white shadow-md rounded-lg p-6 mb-6 transition-all transform hover:scale-105 hover:shadow-xl">
+    <h3 className="text-lg font-semibold text-gray-800 mb-3">{title}</h3>
     {children}
   </div>
 );
@@ -141,7 +141,7 @@ foreach (HeroRecord item in listofHeros)
   ];
 
   return (
-    <div className="p-4">
+    <div className="p-6 bg-gray-100 text-gray-800">
       <h1 className="text-2xl font-bold mb-4">Few Questions and Answers</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {faqData.map((faq, index) => (

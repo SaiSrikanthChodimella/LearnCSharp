@@ -10,8 +10,8 @@ const EntityFramework = () => {
   );
 
   const Section = (title, content) => (
-    <div className="bg-white shadow-md rounded-lg p-6 mb-4">
-      <h2 className="text-2xl font-bold mb-4">{title}</h2>
+    <div className="bg-white shadow-md rounded-lg p-6 mb-4 transition-all transform hover:scale-105 hover:shadow-xl">
+      <h2 className="text-lg font-semibold text-gray-800 mb-3">{title}</h2>
       {content}
     </div>
   );

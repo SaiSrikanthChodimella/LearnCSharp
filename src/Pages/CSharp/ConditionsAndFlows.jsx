@@ -1,7 +1,7 @@
 import React from "react";
 
 const CodeBlock = ({ title, description, code }) => (
-  <div className="bg-white p-6 rounded-lg shadow-md">
+  <div className="bg-white shadow-md rounded-lg p-6 mb-6 transition-all transform hover:scale-105 hover:shadow-xl">
     <h2 className="text-xl font-semibold mb-4">{title}</h2>
     <p className="mb-4">{description}</p>
     <pre className="bg-gray-100 p-4 rounded mb-4">
@@ -11,7 +11,7 @@ const CodeBlock = ({ title, description, code }) => (
 );
 
 const Section = ({ title, children }) => (
-  <div className="bg-white shadow-md rounded-lg p-6 mb-6 transition-all transform hover:scale-105 hover:shadow-xl">
+  <div className="bg-white shadow-md rounded-lg p-6 mb-6">
     <h3 className="text-lg font-semibold text-gray-800 mb-3">{title}</h3>
     {children}
   </div>
@@ -113,7 +113,7 @@ do
 };
 
 const ConditionsAndFlows = () => (
-  <div className="p-8">
+  <div className="p-6 bg-gray-100 text-gray-800">
     <Section title="Conditional Statements">
       {codeExamples.conditionalStatements.map((example, index) => (
         <CodeBlock

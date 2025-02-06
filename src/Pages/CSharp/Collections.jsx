@@ -20,7 +20,7 @@ const List = ({ title, items }) => (
 
 const Collections = () => {
   return (
-    <div className="p-4">
+    <div className="p-6 bg-gray-100 text-gray-800">
       <h1 className="text-2xl font-bold mb-4">Collections</h1>
       <p className="mb-4">
         Collections in C# are data structures that hold multiple items. They
