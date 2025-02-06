@@ -1,18 +1,24 @@
 import React from "react";
 
+const Section = ({ title, children }) => (
+  <div className="p-4 border rounded-lg shadow-md bg-white">
+    <h2 className="text-xl font-bold mb-2">{title}</h2>
+    {children}
+  </div>
+);
+
 const OOPS = () => {
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">OOPs</h2>
+      <Section title="OOPs">
         <p>
           OOP(Object oriented Programming) helps in organizing code using
           real-world concepts like Inheritance, Abstraction, Polymorphism, and
           Encapsulation.
         </p>
-      </div>
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Inheritance</h2>
+      </Section>
+
+      <Section title="Inheritance">
         <p>Inheritance allows code to be reused and organized efficiently.</p>
         <p>
           For example, consider a Vehicle class as the parent. It has common
@@ -48,9 +54,9 @@ const OOPS = () => {
             interfaces.
           </li>
         </ol>
-      </div>
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Abstraction</h2>
+      </Section>
+
+      <Section title="Abstraction">
         <p>
           Abstraction is used to define a blueprint for other classes. It helps
           hide implementation details while exposing only essential features.
@@ -73,9 +79,9 @@ const OOPS = () => {
             methods.
           </li>
         </ul>
-      </div>
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Polymorphism</h2>
+      </Section>
+
+      <Section title="Polymorphism">
         <p>
           Polymorphism allows a child class to provide a new version of a method
           that was defined in the parent class. This is a key feature of
@@ -108,9 +114,9 @@ const OOPS = () => {
             version is called instead.
           </li>
         </ul>
-      </div>
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Encapsulation</h2>
+      </Section>
+
+      <Section title="Encapsulation">
         <p>
           Encapsulation is the concept of bundling related data and methods that
           operate on that data into a single unit, typically a class. This helps
@@ -139,9 +145,9 @@ const OOPS = () => {
             together, it’s easier to maintain and update the class.
           </li>
         </ul>
-      </div>
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Access Modifiers</h2>
+      </Section>
+
+      <Section title="Access Modifiers">
         <table className="table-auto w-full">
           <thead>
             <tr>
@@ -190,9 +196,9 @@ const OOPS = () => {
             </tr>
           </tbody>
         </table>
-      </div>
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Interface</h2>
+      </Section>
+
+      <Section title="Interface">
         <p>
           An interface defines a contract or a set of requirements that a class
           must follow. It acts as a mediator between classes, promoting loose
@@ -237,9 +243,9 @@ const OOPS = () => {
             implementing interface methods.
           </li>
         </ul>
-      </div>
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Properties</h2>
+      </Section>
+
+      <Section title="Properties">
         <p>
           Properties are a way to provide controlled access to the fields of a
           class. They are a blend of fields (for storing data) and methods (for
@@ -279,7 +285,7 @@ const OOPS = () => {
             for getting or setting the value.
           </li>
         </ul>
-      </div>
+      </Section>
     </div>
   );
 };

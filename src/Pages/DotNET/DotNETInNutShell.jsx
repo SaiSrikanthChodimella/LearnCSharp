@@ -1,10 +1,16 @@
 import React from "react";
 
+const Section = ({ title, children }) => (
+  <div className="bg-white p-4 rounded shadow">
+    <h2 className="text-xl font-bold mb-2">{title}</h2>
+    {children}
+  </div>
+);
+
 const DotNETInNutShell = () => {
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="bg-white p-4 rounded shadow col-span-2">
-        <h2 className="text-xl font-bold mb-2">.NET Overview</h2>
+      <Section title=".NET Overview">
         <p>
           .NET is a framework for building applications using languages like C#,
           F#, and VB.
@@ -40,11 +46,8 @@ const DotNETInNutShell = () => {
           .NET is a powerful and flexible platform for modern application
           development.
         </p>
-      </div>
-      <div className="bg-white p-4 rounded shadow">
-        <h2 className="text-xl font-bold mb-2">
-          For New Applications or Libraries
-        </h2>
+      </Section>
+      <Section title="For New Applications or Libraries">
         <ul className="list-disc list-inside">
           <li>Use the latest .NET version.</li>
           <li>
@@ -61,11 +64,8 @@ const DotNETInNutShell = () => {
             .
           </li>
         </ul>
-      </div>
-      <div className="bg-white p-4 rounded shadow">
-        <h2 className="text-xl font-bold mb-2">
-          For Backward-Compatible Libraries
-        </h2>
+      </Section>
+      <Section title="For Backward-Compatible Libraries">
         <ul className="list-disc list-inside">
           <li>If targeting .NET Core, use .NET Standard 2.1.</li>
           <li>
@@ -77,7 +77,7 @@ const DotNETInNutShell = () => {
           This ensures your code remains future-proof while maintaining
           compatibility where needed.
         </p>
-      </div>
+      </Section>
     </div>
   );
 };

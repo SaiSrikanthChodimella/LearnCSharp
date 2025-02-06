@@ -1,20 +1,23 @@
 import React from "react";
 
+const Section = ({ title, children }) => (
+  <div className="bg-white shadow-md rounded-lg p-4 mb-4">
+    <h3 className="text-lg font-bold mb-2">{title}</h3>
+    {children}
+  </div>
+);
+
 const ExceptionHandling = () => {
   return (
     <div className="p-6">
-      <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-        <h2 className="text-xl font-bold mb-2">Exception Handling</h2>
+      <Section title="Exception Handling">
         <p>
           Exception handling helps us deal with errors in a program without
           crashing the application.
         </p>
-      </div>
+      </Section>
 
-      <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-        <h3 className="text-lg font-bold mb-2">
-          Structure of Exception Handling
-        </h3>
+      <Section title="Structure of Exception Handling">
         <ol className="list-decimal list-inside">
           <li>try block – Code that might cause an error.</li>
           <li>catch block – Handles the error if one occurs.</li>
@@ -24,10 +27,9 @@ const ExceptionHandling = () => {
           We can have infinite types of distinct catch blocks and the finally
           block always runs, whether there is an error or not.
         </p>
-      </div>
+      </Section>
 
-      <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-        <h3 className="text-lg font-bold mb-2">Why Use Exception Handling?</h3>
+      <Section title="Why Use Exception Handling?">
         <p>Prevents the application from crashing.</p>
         <p>Catches specific errors, like:</p>
         <ul className="list-disc list-inside">
@@ -35,12 +37,9 @@ const ExceptionHandling = () => {
           <li>FormatException (wrong data format).</li>
           <li>NullReferenceException (trying to use a null object).</li>
         </ul>
-      </div>
+      </Section>
 
-      <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-        <h3 className="text-lg font-bold mb-2">
-          Best Practices for Exception Handling
-        </h3>
+      <Section title="Best Practices for Exception Handling">
         <ul className="list-disc list-inside">
           <li>Use specific catch blocks to handle different errors.</li>
           <li>Always inform the user about the error.</li>
@@ -53,10 +52,9 @@ const ExceptionHandling = () => {
             errors.
           </li>
         </ul>
-      </div>
+      </Section>
 
-      <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-        <h3 className="text-lg font-bold mb-2">What is Throw</h3>
+      <Section title="What is Throw">
         <p>
           The throw keyword is used to manually trigger (raise) an exception.
         </p>
@@ -70,10 +68,9 @@ const ExceptionHandling = () => {
             well.
           </li>
         </ul>
-      </div>
+      </Section>
 
-      <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-        <h3 className="text-lg font-bold mb-2">When to Use throw?</h3>
+      <Section title="When to Use throw?">
         <ul className="list-disc list-inside">
           <li>To rethrow an existing exception (preserving details).</li>
           <li>To create a new exception when something goes wrong.</li>
@@ -81,10 +78,9 @@ const ExceptionHandling = () => {
             To handle inner exceptions (track the original cause of an error).
           </li>
         </ul>
-      </div>
+      </Section>
 
-      <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-        <h3 className="text-lg font-bold mb-2">Creating a Custom Exception</h3>
+      <Section title="Creating a Custom Exception">
         <p>
           We can define our own exception by creating a class that inherits from
           Exception.
@@ -97,7 +93,7 @@ const ExceptionHandling = () => {
           <li>Call the base Exception constructor inside the class.</li>
           <li>Optionally, include additional details in the exception.</li>
         </ol>
-      </div>
+      </Section>
     </div>
   );
 };

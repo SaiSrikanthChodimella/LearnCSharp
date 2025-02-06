@@ -8,10 +8,11 @@ const Section = ({ title, children }) => (
 );
 
 const DotNetContinued = () => {
-  return (
-    <div className="p-8 bg-gray-100">
-      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        <Section title=".NET Framework">
+  const sections = [
+    {
+      title: ".NET Framework",
+      content: (
+        <>
           <li>
             Used for building web applications (ASP.NET), Windows applications
             (WinForms, WPF), Windows server apps, and Azure apps.
@@ -30,18 +31,26 @@ const DotNetContinued = () => {
             <li>Data structures and APIs for low-level operations</li>
             <li>Supports around 100 programming languages</li>
           </ul>
-        </Section>
-
-        <Section title=".NET Core">
+        </>
+      ),
+    },
+    {
+      title: ".NET Core",
+      content: (
+        <>
           <li>
             Includes all essential features of .NET Framework but removes
             outdated and unnecessary components.
           </li>
           <li>Cross-platform and open-source</li>
           <li>Officially supports C#, F#, and VB</li>
-        </Section>
-
-        <Section title=".NET Standard">
+        </>
+      ),
+    },
+    {
+      title: ".NET Standard",
+      content: (
+        <>
           <li>
             A set of rules that every .NET platform must follow to ensure
             compatibility.
@@ -62,9 +71,13 @@ const DotNetContinued = () => {
             When writing libraries, target .NET Standard for maximum
             compatibility.
           </p>
-        </Section>
-
-        <Section title=".NET (Modern .NET – No More Core or Standard)">
+        </>
+      ),
+    },
+    {
+      title: ".NET (Modern .NET – No More Core or Standard)",
+      content: (
+        <>
           <li>
             Everything is merged into one unified framework—.NET Core, .NET
             Framework, Mono, and Xamarin are now just .NET.
@@ -92,7 +105,19 @@ const DotNetContinued = () => {
             With .NET 7 and beyond, code runs anywhere .NET runs, making
             development easier.
           </p>
-        </Section>
+        </>
+      ),
+    },
+  ];
+
+  return (
+    <div className="p-8 bg-gray-100">
+      <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {sections.map((section, index) => (
+          <Section key={index} title={section.title}>
+            {section.content}
+          </Section>
+        ))}
       </div>
     </div>
   );

@@ -1,5 +1,12 @@
 import React from "react";
 
+const Section = ({ title, children }) => (
+  <div className="bg-gray-50 p-4 rounded-lg shadow">
+    <h2 className="text-xl font-semibold">{title}</h2>
+    {children}
+  </div>
+);
+
 const CRUDInEF = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
@@ -9,135 +16,111 @@ const CRUDInEF = () => {
             Basic CRUD operations on DB using EF
           </h1>
           <div className="space-y-4">
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">Create</h2>
+            <Section title="Create">
               <ul className="list-disc list-inside">
                 <li>
-                  After the schema is created in DB, we simply create new
-                  instances of our model classes and populate them with relevant
-                  information
+                  After the schema is created in DB, create new instances of
+                  model classes and populate them with relevant information.
                 </li>
                 <li>
-                  Then create an instance of DerivedDbContext, use the relevant
-                  DBset Property and then save the changes (always use async
-                  methods = SaveChangesAsync)
+                  Create an instance of DerivedDbContext, use the relevant DBset
+                  Property, and save the changes using async methods like
+                  SaveChangesAsync.
                 </li>
               </ul>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">Update</h2>
+            </Section>
+            <Section title="Update">
               <p>
-                Just Modify the object values as intended and call
-                SaveChangesAsync
+                Modify the object values as intended and call SaveChangesAsync.
               </p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">Delete</h2>
+            </Section>
+            <Section title="Delete">
               <p>
-                Use Remove Method and pass the object which we want to remove
+                Use the Remove method and pass the object you want to remove.
               </p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">Read</h2>
-              <p>Use Where Clause to fetch Data</p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">Change Tracker in EF</h2>
+            </Section>
+            <Section title="Read">
+              <p>Use the Where clause to fetch data.</p>
+            </Section>
+            <Section title="Change Tracker in EF">
               <ul className="list-disc list-inside">
                 <li>
-                  Is on by default, can be disabled to improve performance
+                  Is on by default, can be disabled to improve performance.
                 </li>
+                <li>Tracks changes to objects it already knows.</li>
                 <li>
-                  Mechanism which tracks changes to objects which it already
-                  knows.
-                </li>
-                <li>
-                  dbContext.Entry(model class object), to get entries of change
-                  tracker and each entry has a state
+                  Use dbContext.Entry(modelClassObject) to get entries of the
+                  change tracker, each entry has a state.
                 </li>
                 <li>
                   Detached State: EF has no idea about the object / The object
                   is not being tracked.
                 </li>
-                <li>Added State: EF knows a new object is added</li>
-                <li>Unchanged State: There are no changes</li>
+                <li>Added State: EF knows a new object is added.</li>
+                <li>Unchanged State: There are no changes.</li>
                 <li>
                   Modified State: Some changes have been made, but not yet
-                  written to database
+                  written to the database.
                 </li>
-                <li>Deleted State: Object has been removed</li>
+                <li>Deleted State: Object has been removed.</li>
                 <li>
-                  We can not only read states but also manually assign states
-                  based on requirement
+                  We can read states and manually assign states based on
+                  requirements.
                 </li>
               </ul>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">
-                OriginalValue Property in Change Tracker
-              </h2>
+            </Section>
+            <Section title="OriginalValue Property in Change Tracker">
               <ul className="list-disc list-inside">
                 <li>
-                  Entry.OriginalValue[nameof(modelClass.Property)], to know what
-                  the original value
+                  Use Entry.OriginalValue[nameof(modelClass.Property)] to know
+                  the original value.
                 </li>
                 <li>
-                  The value that is saved to Db is treated as original value
+                  The value saved to the DB is treated as the original value.
                 </li>
                 <li>
-                  And then compares the current value of that objects are
-                  identifies the changes and marks the states in Change tracker
+                  Compares the current value of objects, identifies changes, and
+                  marks states in the change tracker.
                 </li>
-                <li>
-                  These change trackers are specific for each specific data
-                  context
-                </li>
+                <li>Change trackers are specific to each data context.</li>
               </ul>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">
-                Attaching Entities Update() in Change Tracker
-              </h2>
+            </Section>
+            <Section title="Attaching Entities Update() in Change Tracker">
               <ul className="list-disc list-inside">
                 <li>
-                  Takes an object which is not part of change tracker and adds
-                  it to the change tracker
+                  Takes an object not part of the change tracker and adds it to
+                  the change tracker.
                 </li>
-                <li>Overwrites the entire object when we use Update()</li>
+                <li>Overwrites the entire object when using Update().</li>
               </ul>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">
-                Disabling Change Tracking
-              </h2>
+            </Section>
+            <Section title="Disabling Change Tracking">
               <p>
                 Use the .AsNoTracking() method to improve performance when it is
-                read-only
+                read-only.
               </p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">
-                Executing Raw SQL statements in EF
-              </h2>
+            </Section>
+            <Section title="Executing Raw SQL statements in EF">
               <ul className="list-disc list-inside">
                 <li>
-                  When LINQ is not sufficient, we can use this method to write
-                  SQL statements
+                  When LINQ is not sufficient, use this method to write SQL
+                  statements.
                 </li>
-                <li>Downside is it opens gate for SQL injection</li>
-                <li>FromSqlRaw (your SQL statement)</li>
-                <li>Consider using FromSqlInterpolated</li>
-                <li>FromSqlInterpolated (your SQL statement)</li>
-                <li>If you have parameters use FromSqlInterpolated</li>
-                <li>ExecuteSqlRawAsync (your SQL statement)</li>
-                <li>If you do not return any data</li>
+                <li>Downside: it opens the gate for SQL injection.</li>
+                <li>
+                  Use FromSqlRaw(your SQL statement) or FromSqlInterpolated(your
+                  SQL statement) if you have parameters.
+                </li>
+                <li>
+                  Use ExecuteSqlRawAsync(your SQL statement) if you do not
+                  return any data.
+                </li>
               </ul>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">Transactions in SQL</h2>
+            </Section>
+            <Section title="Transactions in SQL">
               <p>
-                Transaction is either everything is committed else everything is
-                rolled back.
+                Transaction ensures either everything is committed or everything
+                is rolled back.
               </p>
               <p>
                 Using var transaction = await
@@ -153,73 +136,59 @@ const CRUDInEF = () => {
 }`}
                 </code>
               </pre>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">Expression Trees</h2>
-              <p>Complex topic but need to understand its applications</p>
+            </Section>
+            <Section title="Expression Trees">
+              <p>Complex topic but important to understand its applications.</p>
               <p>
-                C# code translated by compiler into IL-{">"} IL is compiled by
-                JIT -{">"} to assembly language and executed in memory is the
-                general case.
+                C# code is translated by the compiler into IL, which is compiled
+                by JIT into assembly language and executed in memory.
               </p>
               <p>
-                But magically, EF prevents the statement from being compiled to
-                ML because it makes more sense for our code to be compiled
-                /translated to SQL language rather than ML.
+                EF prevents the statement from being compiled to ML because it
+                makes more sense for our code to be translated to SQL rather
+                than ML.
               </p>
-              <p>
-                This is done at Runtime (cannot interpret the ML generated
-                method, done by LINQ.Expression)
-              </p>
+              <p>This is done at runtime using LINQ.Expression.</p>
               <pre className="bg-gray-200 p-2 rounded">
                 <code>{`Func<Dish,bool> func = x => x.Title.StartsWith("B");`}</code>
               </pre>
-              <p>With a concept called Expression Trees</p>
+              <p>With a concept called Expression Trees:</p>
               <pre className="bg-gray-200 p-2 rounded">
                 <code>{`Expression<Func<Dish, bool>> exfunc = x => x.Title.StartsWith("B");`}</code>
               </pre>
               <p>
-                Generates Object Tree, EF Read this at runtime and translates
-                this to SQL
+                Generates an object tree, EF reads this at runtime and
+                translates it to SQL.
               </p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">
-                Relationships and Inheritance
-              </h2>
+            </Section>
+            <Section title="Relationships and Inheritance">
               <p>
-                By Default, Base class and Derived class are put into single
-                table this is called table per hierarchy.
+                By default, base and derived classes are put into a single
+                table, called table per hierarchy.
               </p>
               <p>
-                Discriminator is a special column of type text, contains the
-                name of the class that is object is of, the other columns are
-                null based on the value in discriminator
+                Discriminator is a special column of type text, containing the
+                name of the class the object is of. Other columns are null based
+                on the value in the discriminator.
               </p>
-              <p>
-                To force EF to Store derived Tables we need do the following
-              </p>
+              <p>To force EF to store derived tables:</p>
               <pre className="bg-gray-200 p-2 rounded">
                 <code>{`protected override void OnModelCreating(ModelBuilder modelBuilder) {
-    // Can be used to Set Data Annotations
     modelBuilder.Entity<DerivedClass>().HasBaseType<ParentClass>();
 }`}</code>
               </pre>
+              <p>We can use this to set DataAnnotations for our properties.</p>
+            </Section>
+            <Section title="Include Method">
               <p>
-                We can use this to set DataAnnotations for our properties
-                (another option)
-              </p>
-            </div>
-            <div className="bg-gray-50 p-4 rounded-lg shadow">
-              <h2 className="text-xl font-semibold">Include Method</h2>
-              <p>
-                Enforcing inner join in simplest way (also takes column names)
+                Enforces inner join in the simplest way (also takes column
+                names).
               </p>
               <p>
-                Entry().Collection().LoadAsync() – This line with explicitly
-                load the instances
+                Use Entry().Collection().LoadAsync() to explicitly load the
+                instances.
               </p>
-            </div>
+            </Section>
           </div>
         </div>
       </div>

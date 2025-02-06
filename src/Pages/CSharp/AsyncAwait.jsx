@@ -1,10 +1,16 @@
 import React from "react";
 
+const Section = ({ title, children }) => (
+  <div className="bg-white shadow-md rounded-lg p-4">
+    <h2 className="text-xl font-bold mb-2">{title}</h2>
+    {children}
+  </div>
+);
+
 const AsyncAwait = () => {
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Sync Programming</h2>
+      <Section title="Sync Programming">
         <p>
           Is working on single thread so every task is performed one after
           another (so at a time only 1 task is executed), Example Blocked UI
@@ -19,9 +25,8 @@ const AsyncAwait = () => {
             loads of memory
           </li>
         </ul>
-      </div>
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Async Programming</h2>
+      </Section>
+      <Section title="Async Programming">
         <p>
           (To overcome problems in Sync Programming * on Non-CPU Bound
           operations)
@@ -43,9 +48,8 @@ const AsyncAwait = () => {
           <li>Task Based Pattern *</li>
           <li>Event Based Pattern *</li>
         </ul>
-      </div>
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Async and Await</h2>
+      </Section>
+      <Section title="Async and Await">
         <ul className="list-disc list-inside">
           <li>Using Async Keyword turns a method into Asynchronous method</li>
           <li>
@@ -78,7 +82,7 @@ const AsyncAwait = () => {
           </li>
         </ul>
         <p>Works like magic with Entity Framework</p>
-      </div>
+      </Section>
     </div>
   );
 };

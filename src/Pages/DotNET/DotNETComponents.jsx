@@ -1,5 +1,12 @@
 import React from "react";
 
+const Section = ({ title, children }) => (
+  <div className="bg-white shadow-md rounded-lg p-4 mb-4">
+    <h3 className="text-lg font-semibold mb-1">{title}</h3>
+    {children}
+  </div>
+);
+
 const DotNETComponents = () => {
   return (
     <div className="p-4">
@@ -7,8 +14,7 @@ const DotNETComponents = () => {
         <h1 className="text-2xl font-bold mb-4">
           Understanding .NET Components
         </h1>
-        <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-          <h2 className="text-xl font-semibold mb-2">Language Compiler</h2>
+        <Section title="Language Compiler">
           <ul className="list-disc list-inside">
             <li>
               Converts source code into MSIL (Microsoft Intermediate Language).
@@ -19,17 +25,13 @@ const DotNETComponents = () => {
             </li>
             <li>After compilation, the MSIL is processed by the CLR.</li>
           </ul>
-        </div>
+        </Section>
       </div>
 
-      {/* CLR CTS CLS and FCL */}
       <div className="flex flex-wrap">
         <div className="w-full md:w-1/2 p-2">
           <h1 className="text-2xl font-bold mb-4">CLR, CTS, CLS, and FCL</h1>
-          <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-            <h3 className="text-lg font-semibold mb-1">
-              Common Language Runtime (CLR)
-            </h3>
+          <Section title="Common Language Runtime (CLR)">
             <ul className="list-disc list-inside">
               <li>
                 The execution engine of .NET, also called VES (Virtual Execution
@@ -65,13 +67,11 @@ const DotNETComponents = () => {
                 speed).
               </li>
             </ul>
-          </div>
+          </Section>
         </div>
+
         <div className="w-full md:w-1/2 p-2">
-          <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-            <h3 className="text-lg font-semibold mb-1">
-              Common Type System (CTS)
-            </h3>
+          <Section title="Common Type System (CTS)">
             <ul className="list-disc list-inside">
               <li>Ensures consistent data types across .NET languages.</li>
               <li>
@@ -79,13 +79,11 @@ const DotNETComponents = () => {
                 Int32 in IL/CLR.
               </li>
             </ul>
-          </div>
+          </Section>
         </div>
+
         <div className="w-full md:w-1/2 p-2">
-          <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-            <h3 className="text-lg font-semibold mb-1">
-              Common Language Specification (CLS)
-            </h3>
+          <Section title="Common Language Specification (CLS)">
             <ul className="list-disc list-inside">
               <li>
                 A set of rules that .NET languages must follow to work together.
@@ -95,13 +93,11 @@ const DotNETComponents = () => {
                 languages.
               </li>
             </ul>
-          </div>
+          </Section>
         </div>
+
         <div className="w-full md:w-1/2 p-2">
-          <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-            <h3 className="text-lg font-semibold mb-1">
-              Framework Class Library (FCL)
-            </h3>
+          <Section title="Framework Class Library (FCL)">
             <ul className="list-disc list-inside">
               <li>A collection of predefined classes and methods.</li>
               <li>
@@ -117,12 +113,12 @@ const DotNETComponents = () => {
                 </ul>
               </li>
             </ul>
-          </div>
+          </Section>
         </div>
       </div>
+
       <div className="w-full p-2">
-        <div className="bg-white shadow-md rounded-lg p-4 mb-4">
-          <h3 className="text-lg font-semibold mb-1">.NET Execution Flow</h3>
+        <Section title=".NET Execution Flow">
           <ul className="list-disc list-inside">
             <li>CTS, CLS, and FCL are used to write the source code.</li>
             <li>Compiler converts source code to MSIL.</li>
@@ -134,7 +130,7 @@ const DotNETComponents = () => {
             This structure ensures that .NET applications are efficient, secure,
             and cross-platform.
           </p>
-        </div>
+        </Section>
       </div>
     </div>
   );

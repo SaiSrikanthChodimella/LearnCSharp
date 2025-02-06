@@ -1,10 +1,16 @@
 import React from "react";
 
+const FAQItem = ({ title, children }) => (
+  <div className="p-4 border rounded-lg shadow-md bg-white">
+    <h2 className="text-xl font-bold mb-2">{title}</h2>
+    {children}
+  </div>
+);
+
 const FAQ2 = () => {
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Closures</h2>
+      <FAQItem title="Closures">
         <ul className="list-disc pl-5">
           <li>Occurs when we are writing higher order functions</li>
           <li>
@@ -25,10 +31,9 @@ const FAQ2 = () => {
             hence promoted to heap.
           </li>
         </ul>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">C# version History</h2>
+      <FAQItem title="C# version History">
         <p>(All new stuff that have been getting added in each iteration)</p>
         <h3 className="text-lg font-semibold mt-2">
           Top Level Statements in C# 9 and above
@@ -36,10 +41,9 @@ const FAQ2 = () => {
         <ul className="list-disc pl-5">
           <li>Writing Program without Main Statements</li>
         </ul>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">What is Dynamic</h2>
+      <FAQItem title="What is Dynamic">
         <p>(To complicated and out of scope for now)</p>
         <ul className="list-disc pl-5">
           <li>
@@ -55,12 +59,9 @@ const FAQ2 = () => {
             (Reason that this exists)
           </li>
         </ul>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">
-          Why do we Override ToString() Method
-        </h2>
+      <FAQItem title="Why do we Override ToString() Method">
         <ul className="list-disc pl-5">
           <li>
             When we call ToString() Method we actually base class to string (ie
@@ -69,12 +70,9 @@ const FAQ2 = () => {
             as per our requirement
           </li>
         </ul>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">
-          Why do we Override Equals() Method
-        </h2>
+      <FAQItem title="Why do we Override Equals() Method">
         <ul className="list-disc pl-5">
           <li>For value type it works as intended</li>
           <li>
@@ -93,12 +91,9 @@ const FAQ2 = () => {
             Good Practice to override the Hashcode when overriding Equals()
           </li>
         </ul>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">
-          Convert.ToString() vs .ToString()
-        </h2>
+      <FAQItem title="Convert.ToString() vs .ToString()">
         <ul className="list-disc pl-5">
           <li>
             ToString gives string representation and comes from system.Object
@@ -110,12 +105,9 @@ const FAQ2 = () => {
             Both will return same value, and performance wise no difference
           </li>
         </ul>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">
-          String Builder vs System.String
-        </h2>
+      <FAQItem title="String Builder vs System.String">
         <p>
           String Builders are mutable and System.String are immutable, for
           string manipulation it better to use string builder
@@ -139,12 +131,9 @@ const FAQ2 = () => {
         </p>
         <p>System.String is in System namespace</p>
         <p>StringBuilder is in System.Text namespace</p>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">
-          Class vs Record vs Struct vs Record Struct
-        </h2>
+      <FAQItem title="Class vs Record vs Struct vs Record Struct">
         <table className="table-auto w-full">
           <thead>
             <tr>
@@ -197,18 +186,16 @@ const FAQ2 = () => {
             </tr>
           </tbody>
         </table>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Squiggly Lines while coding</h2>
+      <FAQItem title="Squiggly Lines while coding">
         <ul className="list-disc pl-5">
           <li>Red squiggly line is Error</li>
           <li>Green squiggly is warning</li>
         </ul>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Partial Classes</h2>
+      <FAQItem title="Partial Classes">
         <p>
           Use Partial modifier to make the class as partial (same properties can
           be applied to structs, interfaces)
@@ -237,10 +224,9 @@ const FAQ2 = () => {
           so that autogenerated code is in one physical file and our manual code
           in separate code
         </p>
-      </div>
+      </FAQItem>
 
-      <div className="p-4 border rounded-lg shadow-md bg-white">
-        <h2 className="text-xl font-bold mb-2">Partial Methods</h2>
+      <FAQItem title="Partial Methods">
         <p>Similar to that of partial class</p>
         <ul className="list-disc pl-5">
           <li>
@@ -261,7 +247,7 @@ const FAQ2 = () => {
             then you get compilation error
           </li>
         </ul>
-      </div>
+      </FAQItem>
     </div>
   );
 };

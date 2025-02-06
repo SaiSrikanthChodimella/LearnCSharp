@@ -1,10 +1,16 @@
 import React from "react";
 
+const DefinitionCard = ({ title, children }) => (
+  <div className="bg-white shadow-md rounded-lg p-4">
+    <h2 className="text-xl font-bold mb-2">{title}</h2>
+    {children}
+  </div>
+);
+
 const Definitions = () => {
   return (
     <div className="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Namespace</h2>
+      <DefinitionCard title="Namespace">
         <p>Collection of Classes, interfaces, Structs, Enums and Delegates</p>
         <p>
           Using Statements on top of the code page indicate you are using those
@@ -12,9 +18,9 @@ const Definitions = () => {
         </p>
         <p>We can create nested Namespaces</p>
         <p>We can Also Alias the Namespace when needed</p>
-      </div>
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Class and Object</h2>
+      </DefinitionCard>
+
+      <DefinitionCard title="Class and Object">
         <p>
           A bundle of Code (Methods, variables, fields, properties, constructor
           etc) (Ref Link)
@@ -32,9 +38,9 @@ const Definitions = () => {
           instances will not have command over the static modified fields and
           methods.
         </p>
-      </div>
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Object Syntax</h2>
+      </DefinitionCard>
+
+      <DefinitionCard title="Object Syntax">
         <p>Datatype variableName = new Constructor ();</p>
         <p>
           Creates an instance of the class and we can access
@@ -47,9 +53,9 @@ const Definitions = () => {
           We have 2 different instances of Dog, we can do something like
           Dog1.Breed = x, Dog2.Breed = y;
         </p>
-      </div>
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Constructor</h2>
+      </DefinitionCard>
+
+      <DefinitionCard title="Constructor">
         <p>
           A special method in Class that has same name as class and has no
           return types, used to initialize data in the class.
@@ -60,9 +66,9 @@ const Definitions = () => {
         <p>Example:</p>
         <p>Dog Dog1 = new Dog (x);</p>
         <p>Dog Dog2 = new Dog (x, y);</p>
-      </div>
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Method</h2>
+      </DefinitionCard>
+
+      <DefinitionCard title="Method">
         <p>
           Section of code to run a block of code whenever invoked / called. So
           that repetitive code can be eliminated
@@ -81,9 +87,9 @@ const Definitions = () => {
           Variables declared inside the method are member variables only
           available in the scope of the method
         </p>
-      </div>
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Optional Parameter</h2>
+      </DefinitionCard>
+
+      <DefinitionCard title="Optional Parameter">
         <p>Should be the last parameter in the signature</p>
         <p>Should have a default or custom value assigned to it</p>
         <p>We can have only 1 optional parameter</p>
@@ -96,9 +102,9 @@ const Definitions = () => {
           Public void SomeMethod(int integer, double decimal, string =
           “someString”) {`{ // Does Something }`}
         </p>
-      </div>
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Params</h2>
+      </DefinitionCard>
+
+      <DefinitionCard title="Params">
         <p>
           Single Dimension Array of arguments / Parameters for a same method
         </p>
@@ -114,9 +120,9 @@ const Definitions = () => {
           i.e., while calling this method we can pass as many parameters of
           similar data type to the method
         </p>
-      </div>
-      <div className="bg-white shadow-md rounded-lg p-4">
-        <h2 className="text-xl font-bold mb-2">Recursive Method</h2>
+      </DefinitionCard>
+
+      <DefinitionCard title="Recursive Method">
         <p>
           Advantage: Easier debugging, Easier to Code, Alternative to iteration
         </p>
@@ -125,7 +131,7 @@ const Definitions = () => {
           Method calling itself over and over we will have break or return
           statement (to break cyclic loop)
         </p>
-      </div>
+      </DefinitionCard>
     </div>
   );
 };

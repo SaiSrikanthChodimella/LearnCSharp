@@ -1,5 +1,18 @@
 import React from "react";
 
+const Section = ({ title, children }) => (
+  <div className="mb-6">
+    <h2 className="text-xl font-semibold mb-2">{title}</h2>
+    {children}
+  </div>
+);
+
+const CodeBlock = ({ code }) => (
+  <pre className="bg-gray-200 p-4 rounded">
+    <code>{code}</code>
+  </pre>
+);
+
 const DBClass = () => {
   return (
     <div className="p-6 bg-gray-100 min-h-screen">
@@ -8,8 +21,7 @@ const DBClass = () => {
           DbContext, DbContextOption and DbSet Class
         </h1>
 
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">DbContext</h2>
+        <Section title="DbContext">
           <ul className="list-disc list-inside">
             <li>
               Class that is responsible for interacting with underlying Database
@@ -17,24 +29,22 @@ const DBClass = () => {
             <li>Manages the Database connections</li>
             <li>Used for Saving and retrieval of data from database</li>
             <li>We create a class and inherit DbContext class</li>
-            <li>Dbcontext exists in Microsoft.EntityFrameworkCore Namespace</li>
+            <li>DbContext exists in Microsoft.EntityFrameworkCore Namespace</li>
           </ul>
-        </div>
+        </Section>
 
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">DbContextOptions</h2>
+        <Section title="DbContextOptions">
           <p>
             For DbContext to perform operations we need an instance of
-            DbContextOptions carries information such as:
+            DbContextOptions which carries information such as:
           </p>
           <ul className="list-disc list-inside">
             <li>Connection String</li>
             <li>Database Provider etc.</li>
           </ul>
-        </div>
+        </Section>
 
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">DbSet</h2>
+        <Section title="DbSet">
           <p>Properties (are declared in DbContext Class):</p>
           <ul className="list-disc list-inside">
             <li>
@@ -44,25 +54,19 @@ const DBClass = () => {
             </li>
             <li>Implements IQueryable and IEnumerable</li>
           </ul>
-        </div>
+        </Section>
 
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">All Put Together</h2>
+        <Section title="All Put Together">
           <p>Should look something like this in the end:</p>
-          <pre className="bg-gray-200 p-4 rounded">
-            <code>
-              {`public class DerivedDbConextClass : DBContext {
-    public DerivedDBContextClass(DbcontextOptions<DerivedDbConextClass> abc) : base(abc) {}
-    public DbSet<ModelClass> ModelClass { get; set; }
+          <CodeBlock
+            code={`public class DerivedDbConextClass : DBContext {
+  public DerivedDBContextClass(DbcontextOptions<DerivedDbConextClass> abc) : base(abc) {}
+  public DbSet<ModelClass> ModelClass { get; set; }
 }`}
-            </code>
-          </pre>
-        </div>
+          />
+        </Section>
 
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">
-            Handling model changes in EF
-          </h2>
+        <Section title="Handling model changes in EF">
           <p>
             We handle changes using Migrations. So, what is this Migration
             anyway?
@@ -80,12 +84,9 @@ const DBClass = () => {
               database update command (for the changes to be reflected)
             </li>
           </ul>
-        </div>
+        </Section>
 
-        <div className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">
-            So how do we use the migrations
-          </h2>
+        <Section title="So how do we use the migrations">
           <ul className="list-disc list-inside">
             <li>
               Once all your models are set up appropriately, through the
@@ -112,9 +113,9 @@ const DBClass = () => {
               <code>dotnet ef migrations remove</code> - Removes the migration
             </li>
           </ul>
-        </div>
+        </Section>
 
-        <div className="mb-6">
+        <Section>
           <p>
             After a Db is generated and later model is changed and exception
             will be thrown as Model and DB are not in sync anymore.
@@ -129,9 +130,9 @@ const DBClass = () => {
               HashID of the Context Class and EF Version
             </li>
           </ul>
-        </div>
+        </Section>
 
-        <div className="mb-6">
+        <Section>
           <p>
             Global asax (Global Application Class) (this is how we do it in .NET
             Framework, need check how we do this in .NET 7):
@@ -142,7 +143,7 @@ const DBClass = () => {
               Drop, recreate the DB
             </li>
           </ul>
-        </div>
+        </Section>
       </div>
     </div>
   );

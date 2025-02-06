@@ -1,5 +1,12 @@
 import React from "react";
 
+const Section = ({ title, children }) => (
+  <div className="mb-4 p-4 bg-gray-50 rounded-lg shadow-inner">
+    <h2 className="text-xl font-semibold mb-2">{title}</h2>
+    {children}
+  </div>
+);
+
 const DotNETMemory = () => {
   return (
     <div className="p-6 bg-gray-100">
@@ -12,8 +19,7 @@ const DotNETMemory = () => {
           which removes objects that are no longer in use. This helps free up
           memory for new tasks. GC is part of CLR (Ref Link)
         </p>
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg shadow-inner">
-          <h2 className="text-xl font-semibold mb-2">Stack and Heap Memory</h2>
+        <Section title="Stack and Heap Memory">
           <p className="mb-2">
             When a .NET application starts, the operating system assigns a chunk
             of memory (virtual memory). This memory is divided into two parts:
@@ -41,9 +47,8 @@ const DotNETMemory = () => {
             </li>
             <li>Both Stack and Heap can grow in size</li>
           </ul>
-        </div>
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg shadow-inner">
-          <h2 className="text-xl font-semibold mb-2">How .NET Stores Data</h2>
+        </Section>
+        <Section title="How .NET Stores Data">
           <ul className="list-disc list-inside mb-2">
             <li>
               Value types (like int, float, bool, struct) are stored in the
@@ -84,38 +89,36 @@ const DotNETMemory = () => {
               stack. This happens separately for each thread in the application.
             </li>
           </ul>
-        </div>
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg shadow-inner">
-          <h2 className="text-xl font-semibold mb-2">
-            Memory Layout of an Object – Reference Type
-          </h2>
-          <p className="mb-2">
-            When an object is being created there are a lot of allocations
-            happening
-          </p>
-          <h3 className="text-lg font-semibold mb-2">Object Memory Layout</h3>
-          <p className="mb-2">When an object is created, it consists of:</p>
-          <ul className="list-disc list-inside mb-2">
-            <li>Sync Block Index – Used for threading (e.g., locks).</li>
-            <li>
-              Method Table Pointer – A 4-byte reference to methods of the class.
-            </li>
-            <li>Base Method Table – Links to parent class methods.</li>
-            <li>
-              Constructor (ctor) and Destructor (cctor) – Handle object creation
-              and cleanup.
-            </li>
-            <li>Type Object Pointer – Used internally for managing types.</li>
-            <li>
-              Bare minimum size of a .Net object is 12 Bytes in 32 bit and 24
-              bytes in 64 bits
-            </li>
-          </ul>
-        </div>
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg shadow-inner">
-          <h2 className="text-xl font-semibold mb-2">
-            Why Are Loops and Method Calls Expensive?
-          </h2>
+        </Section>
+        <Section title="Memory Layout of an Object – Reference Type">
+          <>
+            <p className="mb-2">
+              When an object is being created there are a lot of allocations
+              happening
+            </p>
+            <h3 className="text-lg font-semibold mb-2">Object Memory Layout</h3>
+            <p className="mb-2">When an object is created, it consists of:</p>
+            <ul className="list-disc list-inside mb-2">
+              <li>Sync Block Index – Used for threading (e.g., locks).</li>
+              <li>
+                Method Table Pointer – A 4-byte reference to methods of the
+                class.
+              </li>
+              <li>Base Method Table – Links to parent class methods.</li>
+              <li>
+                Constructor (ctor) and Destructor (cctor) – Handle object
+                creation and cleanup.
+              </li>
+              <li>Type Object Pointer – Used internally for managing types.</li>
+              <li>
+                Bare minimum size of a .Net object is 12 Bytes in 32 bit and 24
+                bytes in 64 bits
+              </li>
+            </ul>
+          </>
+        </Section>
+
+        <Section title="Why Are Loops and Method Calls Expensive?">
           <ul className="list-disc list-inside mb-2">
             <li>
               Every method call creates a stack frame, which takes time to
@@ -134,11 +137,8 @@ const DotNETMemory = () => {
               execution.
             </li>
           </ul>
-        </div>
-        <div className="mb-4 p-4 bg-gray-50 rounded-lg shadow-inner">
-          <h2 className="text-xl font-semibold mb-2">
-            What Are Inline Methods?
-          </h2>
+        </Section>
+        <Section title="What Are Inline Methods?">
           <ul className="list-disc list-inside mb-2">
             <li>
               Inlining is when the compiler replaces a method call with the
@@ -150,7 +150,7 @@ const DotNETMemory = () => {
               performance in mind.
             </li>
           </ul>
-        </div>
+        </Section>
       </div>
     </div>
   );
