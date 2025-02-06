@@ -9,6 +9,7 @@ const FooterIconLink = ({ href, src, alt, ariaLabel }) => (
   <a
     href={href}
     target="_blank"
+    rel="noopener noreferrer"
     aria-label={ariaLabel}
     className="transition-transform transform hover:scale-110"
   >
@@ -19,11 +20,12 @@ const FooterIconLink = ({ href, src, alt, ariaLabel }) => (
 function Footer() {
   const currentYear = new Date().getFullYear();
   return (
-    <footer className="bg-gray-900 text-white py-4">
+    <footer className="bg-gray-900 text-white py-6">
       <div className="max-w-screen-lg mx-auto px-4">
-        <div className="flex justify-between items-center">
+        {/* Main Footer Content */}
+        <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
           {/* About Section */}
-          <div className="space-y-2">
+          <div className="text-center md:text-left space-y-2">
             <h5 className="font-semibold text-lg">About</h5>
             <p className="text-sm">
               Built with <strong className="text-yellow-400">React.js</strong>{" "}
@@ -32,9 +34,9 @@ function Footer() {
           </div>
 
           {/* Contact & Social Links Section */}
-          <div className="flex flex-col items-center">
+          <div className="text-center space-y-2">
             <h5 className="font-semibold text-lg">Contact</h5>
-            <div className="flex space-x-4">
+            <div className="flex justify-center space-x-4">
               <FooterIconLink
                 href="mailto:saisrikanthchodimella@gmail.com"
                 src={Gmail}
@@ -51,9 +53,9 @@ function Footer() {
           </div>
 
           {/* Resource Links Section */}
-          <div className="space-y-2">
+          <div className="text-center space-y-2">
             <h5 className="font-semibold text-lg">Resources</h5>
-            <div className="flex space-x-4">
+            <div className="flex justify-center space-x-4">
               <FooterIconLink
                 href="https://dev.azure.com/srikanthchodimella/MonsterBuilder"
                 src={Git}
@@ -77,7 +79,7 @@ function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <hr className="border-white my-4" />
+        <hr className="border-gray-700 my-4" />
         <div className="text-center text-sm">
           <p>
             &copy; {currentYear} Sai Srikanth Chodimella. All Rights Reserved.

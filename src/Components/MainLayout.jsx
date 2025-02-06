@@ -10,10 +10,12 @@ const Dashboard = () => {
     <Router basename="/LearnCSharp">
       <div className="flex flex-col md:flex-row h-screen bg-gray-100">
         {/* Sidebar */}
-        <Sidebar />
+        <div className="w-full md:w-64 bg-white shadow-lg z-10">
+          <Sidebar />
+        </div>
 
         {/* Main Content */}
-        <main className="flex-1 p-6 overflow-y-auto bg-white shadow-lg rounded-lg m-4">
+        <main className="flex-1 p-6 overflow-y-auto m-4 md:ml-0">
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>

@@ -98,19 +98,28 @@ const Sidebar = () => {
 
   return (
     <>
-      {/* Toggle Button */}
+      {/* Toggle Button for Mobile */}
       <button
-        className="p-3 m-2 text-white bg-blue-600 rounded-md md:hidden"
+        className="p-3 m-2 text-white bg-blue-600 rounded-md md:hidden fixed top-0 left-0 z-50"
         onClick={() => setIsOpen(!isOpen)}
+        aria-label="Toggle Sidebar"
       >
-        {isOpen ? "Close Menu" : "Open Menu"}
+        {isOpen ? "✕ Close" : "☰ Menu"}
       </button>
+
+      {/* Overlay for Mobile */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/50 z-40 md:hidden"
+          onClick={() => setIsOpen(false)}
+        ></div>
+      )}
 
       {/* Sidebar */}
       <nav
-        className={`fixed inset-y-0 left-0 w-64 bg-gray-900 text-white h-full overflow-y-auto transform transition-transform md:relative md:translate-x-0 ${
+        className={`fixed inset-y-0 left-0 w-64 bg-gray-900 text-white h-full overflow-y-auto transform transition-transform duration-300 ease-in-out z-50 md:relative md:translate-x-0 ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } md:block`}
+        }`}
         aria-label="Sidebar"
       >
         <div className="p-6">
