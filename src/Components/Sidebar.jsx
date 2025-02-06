@@ -3,6 +3,9 @@ import { Link, useLocation } from "react-router-dom";
 
 const sections = [
   {
+    pages: [{ name: "Home", href: "/" }],
+  },
+  {
     title: ".NET",
     pages: [
       { name: ".NET in a Nut Shell", href: "/DotNETInNutShell" },
