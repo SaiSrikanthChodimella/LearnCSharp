@@ -1,5 +1,5 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 
 const sections = [
   {
@@ -30,8 +30,8 @@ const sections = [
     ],
   },
   {
-    title: "Object oriented Programming",
-    pages: [{ name: "Object oriented Programming", href: "/OOPS" }],
+    title: "Object Oriented Programming",
+    pages: [{ name: "Object Oriented Programming", href: "/OOPS" }],
   },
   {
     title: "LINQ",
@@ -63,34 +63,70 @@ const sections = [
   },
 ];
 
-const SidebarSection = ({ title, pages }) => (
-  <div className="mb-6">
-    <h3 className="text-lg font-semibold mb-2">{title}</h3>
-    <ul>
-      {pages.map((page, index) => (
-        <li key={index} className="p-2 cursor-pointer hover:bg-gray-700">
-          <Link to={page.href} className="block">
-            {page.name}
-          </Link>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-
-const Sidebar = () => (
-  <nav className="w-full md:w-1/4 bg-gray-800 text-white p-4 h-screen overflow-y-auto">
-    <div className="text-[0.9rem] space-y-6">
-      <h2 className="text-xl font-bold mb-4">Learn C# and .NET</h2>
-      {sections.map((section, index) => (
-        <SidebarSection
-          key={index}
-          title={section.title}
-          pages={section.pages}
-        />
-      ))}
+const SidebarSection = ({ title, pages }) => {
+  const location = useLocation();
+  return (
+    <div className="mb-6">
+      <h3 className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-2">
+        {title}
+      </h3>
+      <ul className="space-y-1">
+        {pages.map((page, index) => (
+          <li key={index}>
+            <Link
+              to={page.href}
+              className={`flex items-center p-2 text-sm font-medium rounded-lg transition-colors ${
+                location.pathname === page.href
+                  ? "bg-blue-700 text-white"
+                  : "text-gray-300 hover:bg-gray-700 hover:text-white"
+              }`}
+            >
+              {page.name}
+            </Link>
+          </li>
+        ))}
+      </ul>
     </div>
-  </nav>
-);
+  );
+};
+
+const Sidebar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  return (
+    <>
+      {/* Toggle Button */}
+      <button
+        className="p-3 m-2 text-white bg-blue-600 rounded-md md:hidden"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? "Close Menu" : "Open Menu"}
+      </button>
+
+      {/* Sidebar */}
+      <nav
+        className={`fixed inset-y-0 left-0 w-64 bg-gray-900 text-white h-full overflow-y-auto transform transition-transform md:relative md:translate-x-0 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        } md:block`}
+        aria-label="Sidebar"
+      >
+        <div className="p-6">
+          <h2 className="text-xl font-bold text-white mb-8">
+            Learn C# and .NET
+          </h2>
+          <div className="space-y-8">
+            {sections.map((section, index) => (
+              <SidebarSection
+                key={index}
+                title={section.title}
+                pages={section.pages}
+              />
+            ))}
+          </div>
+        </div>
+      </nav>
+    </>
+  );
+};
 
 export default Sidebar;

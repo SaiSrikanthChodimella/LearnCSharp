@@ -7,9 +7,12 @@ import CSharpRoutes from "./CSharpRoutes";
 const Dashboard = () => {
   return (
     <Router>
-      <div className="flex flex-col md:flex-row h-screen">
+      <div className="flex flex-col md:flex-row h-screen bg-gray-100">
+        {/* Sidebar */}
         <Sidebar />
-        <main className="w-full md:w-3/4 lg:w-4/5 p-6 overflow-auto">
+
+        {/* Main Content */}
+        <main className="flex-1 p-6 overflow-y-auto bg-white shadow-lg rounded-lg m-4">
           <Routes>
             <Route path="/" element={<Home />} />
           </Routes>
