@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import Home from "../Pages/Home";
+import CleanCode from "../Pages/CleanCode";
 import DotNETRoutes from "./DotNETRoutes";
 import CSharpRoutes from "./CSharpRoutes";
 import Footer from "./Footer";
@@ -18,6 +19,7 @@ const Dashboard = () => {
         <main className="flex-1 p-6 overflow-y-auto m-4 md:ml-0">
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/CleanCode" element={<CleanCode />} />
           </Routes>
           <DotNETRoutes />
           <CSharpRoutes />

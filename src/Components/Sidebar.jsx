@@ -37,6 +37,10 @@ const sections = [
     pages: [{ name: "Object Oriented Programming", href: "/OOPS" }],
   },
   {
+    title: "Clean Coding",
+    pages: [{ name: "Definitions", href: "/CleanCode" }],
+  },
+  {
     title: "LINQ",
     pages: [{ name: "LINQ", href: "/LINQ" }],
   },
