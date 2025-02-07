@@ -89,82 +89,84 @@ const CodeBlock = ({ children }) => (
 );
 
 const DataTypesAndVariables = () => (
-  <div className="p-6 bg-gray-100">
-    <h2 className="text-2xl font-bold mb-4">Data Types and Variables</h2>
-    <p className="mb-4">
-      C# has different data types to store various kinds of data.
-    </p>
+  <div className="p-6 bg-gray-100 text-gray-800">
+    <div className="max-w-7xl mx-auto">
+      <h1 className="text-3xl font-bold mb-8">Data Types and Variables</h1>
+      <p className="mb-8">
+        C# has different data types to store various kinds of data.
+      </p>
 
-    <Section title="Value Types (Stored in Stack)">
-      <Table data={dataTypes.valueTypes} />
-    </Section>
-
-    <Section title="Reference Types (Stored in Heap)">
-      <Table data={dataTypes.referenceTypes} />
-    </Section>
-
-    <InfoBox>
-      <Section title="Variables and Constants">
-        <p className="mb-4">
-          Variables store data values and their values can change, but not the
-          type.
-        </p>
-        <p className="mb-4">
-          Constants (const): Their values remain the same throughout the
-          program.
-        </p>
+      <Section title="Value Types (Stored in Stack)">
+        <Table data={dataTypes.valueTypes} />
       </Section>
-    </InfoBox>
 
-    <InfoBox>
-      <Section title="Memory: Stack and Heap">
-        <p className="mb-2">
-          Reference types are stored in the Heap and Value types are stored in
-          the Stack. Reference variables (which hold the address of the actual
-          object) are stored in the Stack, while the actual object is inside the
-          Heap.
-        </p>
-        <p className="mb-2">Destruction of variables:</p>
-        <ul className="list-disc list-inside mb-2">
-          <li>
-            When out of scope, the stack data and reference variable are
-            automatically destroyed.
-          </li>
-          <li>
-            The actual object is destroyed by the Garbage Collector (when the GC
-            looks at the heap and sees that there is no pointer to the allocated
-            memory, it destroys it).
-          </li>
-        </ul>
+      <Section title="Reference Types (Stored in Heap)">
+        <Table data={dataTypes.referenceTypes} />
       </Section>
-    </InfoBox>
 
-    <InfoBox>
-      <Section title="The var Keyword in C#">
-        <p className="text-gray-700 leading-relaxed mb-4">
-          The var keyword lets you declare a variable without specifying its
-          type. The compiler figures out the type based on the value you assign.
-          This makes things easy but it's only limited to local scope. Use var
-          when the type is obvious or when working with complex types like LINQ
-          or anonymous objects.
-        </p>
-        <p className="text-gray-700 leading-relaxed mb-4">
-          For example:
-          <CodeBlock>
-            var number = 10; // Compiler knows it's an 'int' <br />
-            var name = "John"; // Compiler knows it's a 'string'
-          </CodeBlock>
-        </p>
-        <p className="text-gray-700 leading-relaxed mb-4">
-          Once the type is set, you <strong>cannot</strong> change it. For
-          example:
-          <CodeBlock>
-            var number = 10; <br />
-            number = "Hello"; // Error! Can't change to a string
-          </CodeBlock>
-        </p>
-      </Section>
-    </InfoBox>
+      <InfoBox>
+        <Section title="Variables and Constants">
+          <p className="mb-4">
+            Variables store data values and their values can change, but not the
+            type.
+          </p>
+          <p className="mb-4">
+            Constants (const): Their values remain the same throughout the
+            program.
+          </p>
+        </Section>
+      </InfoBox>
+
+      <InfoBox>
+        <Section title="Memory: Stack and Heap">
+          <p className="mb-2">
+            Reference types are stored in the Heap and Value types are stored in
+            the Stack. Reference variables (which hold the address of the actual
+            object) are stored in the Stack, while the actual object is inside
+            the Heap.
+          </p>
+          <p className="mb-2">Destruction of variables:</p>
+          <ul className="list-disc list-inside mb-2">
+            <li>
+              When out of scope, the stack data and reference variable are
+              automatically destroyed.
+            </li>
+            <li>
+              The actual object is destroyed by the Garbage Collector (when the
+              GC looks at the heap and sees that there is no pointer to the
+              allocated memory, it destroys it).
+            </li>
+          </ul>
+        </Section>
+      </InfoBox>
+
+      <InfoBox>
+        <Section title="The var Keyword in C#">
+          <p className="text-gray-700 leading-relaxed mb-4">
+            The var keyword lets you declare a variable without specifying its
+            type. The compiler figures out the type based on the value you
+            assign. This makes things easy but it's only limited to local scope.
+            Use var when the type is obvious or when working with complex types
+            like LINQ or anonymous objects.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            For example:
+            <CodeBlock>
+              var number = 10; // Compiler knows it's an 'int' <br />
+              var name = "John"; // Compiler knows it's a 'string'
+            </CodeBlock>
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-4">
+            Once the type is set, you <strong>cannot</strong> change it. For
+            example:
+            <CodeBlock>
+              var number = 10; <br />
+              number = "Hello"; // Error! Can't change to a string
+            </CodeBlock>
+          </p>
+        </Section>
+      </InfoBox>
+    </div>
   </div>
 );
 

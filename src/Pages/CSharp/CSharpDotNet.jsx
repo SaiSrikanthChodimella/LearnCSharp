@@ -25,21 +25,21 @@ const Overview = () => {
 
   return (
     <div className="p-6 bg-gray-100 text-gray-800">
-      <div className="bg-white shadow-lg rounded-lg p-8">
-        <h1 className="text-2xl font-bold mb-4">Why Choose C# and .NET?</h1>
-        <p className="text-gray-700 mb-2">
+      <div className="max-w-7xl mx-auto">
+        <h1 className="text-3xl font-bold mb-8">Why Choose C# and .NET?</h1>
+        <p className="text-gray-700 mb-6">
           <strong>C#</strong> is a versatile programming language that lets you
           create many types of applications using <strong>.NET</strong>. It's
           particularly good for business applications:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {sections.map((section, index) => (
-            <Section key={index} title={section.title}>
-              {section.content}
+          {sections.map(({ title, content }) => (
+            <Section key={title} title={title}>
+              {content}
             </Section>
           ))}
         </div>
-        <p className="text-gray-700 mt-4">
+        <p className="text-gray-700 mt-6">
           The latest version is C# 12. Check the wiki for more details on its
           updates.
         </p>

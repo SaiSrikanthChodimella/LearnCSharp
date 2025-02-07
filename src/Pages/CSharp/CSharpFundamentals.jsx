@@ -6,17 +6,18 @@ const Section = ({ title, children }) => (
     {children}
   </div>
 );
-
 const CodeBlock = ({ code }) => (
-  <pre className="bg-gray-100 p-4 rounded overflow-x-auto">
+  <pre className="bg-gray-100 p-4 rounded-md overflow-x-auto text-sm font-mono">
     <code>{code}</code>
   </pre>
 );
 
 const List = ({ items }) => (
-  <ul className="list-disc list-inside">
+  <ul className="list-disc list-inside space-y-2">
     {items.map((item, index) => (
-      <li key={index}>{item}</li>
+      <li key={index} className="text-gray-700">
+        {item}
+      </li>
     ))}
   </ul>
 );
@@ -24,7 +25,7 @@ const List = ({ items }) => (
 const CSharpFundamentals = () => {
   return (
     <div className="p-6 bg-gray-100 text-gray-800">
-      <div className="p-4">
+      <div className="max-w-7xl mx-auto">
         <Section title="Fundamentals">
           <List
             items={[
@@ -55,7 +56,7 @@ class Program
     }
 }`}
           />
-          <h3 className="text-lg font-semibold mt-4">Explanation:</h3>
+          <h3 className="text-lg font-semibold mt-4 mb-2">Explanation:</h3>
           <List
             items={[
               <span>
@@ -105,9 +106,9 @@ class Program
         </Section>
 
         <Section title="Additional Concepts">
-          <div className="mb-4">
-            <h3 className="text-lg font-semibold">Comments</h3>
-            <p>
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">Comments</h3>
+            <p className="text-gray-700 mb-2">
               Comments are lines in code that are ignored by the compiler,
               usually used for notes.
             </p>
@@ -122,13 +123,14 @@ class Program
               ]}
             />
           </div>
-          <div className="mb-4">
-            <h3 className="text-lg font-semibold">String Interpolation</h3>
-            <p>
+
+          <div className="mb-6">
+            <h3 className="text-lg font-semibold mb-2">String Interpolation</h3>
+            <p className="text-gray-700 mb-2">
               Use <code>$</code> before the string and wrap variables inside{" "}
               <code>{`{}`}</code>.
             </p>
-            <p>Why use string interpolation:</p>
+            <p className="text-gray-700 mb-2">Why use string interpolation:</p>
             <List
               items={[
                 "Easier to read – No need for + operators.",
@@ -145,14 +147,17 @@ Console.WriteLine("Hello " + name + "!");
 Console.WriteLine($"Hello {name}!");`}
             />
           </div>
+
           <div>
-            <h3 className="text-lg font-semibold">Escape Sequences</h3>
-            <p>
+            <h3 className="text-lg font-semibold mb-2">Escape Sequences</h3>
+            <p className="text-gray-700 mb-2">
               Output/string literals are modified by the usage of escape
-              sequences (e.g., <code>/n</code> for new line, <code>@</code> to
+              sequences (e.g., <code>\n</code> for new line, <code>@</code> to
               ignore escape sequences).
             </p>
-            <p>Check wiki for all escape sequences.</p>
+            <p className="text-gray-700">
+              Check wiki for all escape sequences.
+            </p>
           </div>
         </Section>
       </div>

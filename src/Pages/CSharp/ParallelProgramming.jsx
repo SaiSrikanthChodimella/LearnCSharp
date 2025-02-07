@@ -201,7 +201,7 @@ Parallel.For(0, 100, options, i => { /* Your code */ });`}
 
   return (
     <div className="p-6 bg-gray-100 text-gray-800">
-      <h1 className="text-2xl font-bold mb-4">Parallel Programming</h1>
+      <h1 className="text-3xl font-bold mb-8">Parallel Programming</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {sections.map((section, index) => (
           <Section key={index} title={section.title}>
