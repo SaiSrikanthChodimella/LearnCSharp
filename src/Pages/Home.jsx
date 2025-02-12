@@ -1,6 +1,7 @@
 import React from "react";
 import CSharp from "../assets/C_Sharp_Logo_2023.png";
 import DotNET from "../assets/Microsoft_.NET_logo.png";
+import Notes from "../assets/CSharpNotes.pdf";
 
 const Home = () => {
   return (
@@ -24,12 +25,11 @@ const Home = () => {
             Learn C# and .NET concepts along with me.
           </p>
           <a
-            href="https://saisrikanthchodimella.github.io/ReactPortfolio/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-violet-900 px-8 py-3 rounded-lg font-semibold shadow-lg hover:bg-violet-100 hover:scale-105 transition-all duration-300"
+            href={Notes}
+            download="CSharpNotes"
+            className="bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-8 py-3 rounded-2xl shadow-lg transform transition-all duration-500 hover:scale-110 hover:shadow-2xl"
           >
-            About Me
+            Download Notes
           </a>
         </div>
       </div>

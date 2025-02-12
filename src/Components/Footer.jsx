@@ -26,11 +26,20 @@ function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-center md:items-start space-y-8 md:space-y-0">
           {/* About Section */}
           <div className="text-center md:text-left space-y-2">
-            <h5 className="font-semibold text-lg">About</h5>
+            <h5 className="font-semibold text-lg">Information</h5>
             <p className="text-sm">
               Built with <strong className="text-yellow-400">React.js</strong>{" "}
               and <strong className="text-yellow-400">Tailwind CSS</strong>.
             </p>
+            {/* Updated "About Me" Button */}
+            <a
+              href="https://saisrikanthchodimella.github.io/ReactPortfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-white/10 text-white px-4 py-2 rounded-lg text-sm font-medium shadow-sm hover:bg-white/20 hover:scale-105 transition-all duration-300"
+            >
+              About Me
+            </a>
           </div>
 
           {/* Contact & Social Links Section */}
